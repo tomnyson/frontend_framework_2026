@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Lê Hồng Sơn - Senior Full Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #2563eb;
+            --text-dark: #111827;
+            --text-normal: #374151;
+            --text-light: #6b7280;
+            --bg-page: #f3f4f6;
+            --bg-cv: #ffffff;
+            --border: #e5e7eb;
+            --tag-bg: #eff6ff;
+            --tag-text: #1d4ed8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-normal);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .cv-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: var(--bg-cv);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 50px;
+            border-radius: 8px;
+        }
+
+        /* Header */
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 30px;
+            font-size: 0.95rem;
+            color: var(--text-normal);
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-info i {
+            color: var(--secondary);
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+
+        /* Layout Grid */
+        .cv-body {
+            display: grid;
+            grid-template-columns: 2fr 1.1fr;
+            gap: 40px;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title i {
+            margin-right: 8px;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* Timeline / Experience */
+        .timeline {
+            border-left: 2px solid var(--border);
+            padding-left: 20px;
+            margin-left: 8px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary);
+            border-radius: 50%;
+            border: 2px solid var(--bg-cv);
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .job-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        /* Skills */
+        .skill-group {
+            margin-bottom: 15px;
+        }
+
+        .skill-group-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 20px;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .edu-school {
+            font-size: 0.95rem;
+            color: var(--text-normal);
+            margin-bottom: 2px;
+        }
+
+        .edu-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .cv-body {
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cv-body {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    <!-- Header Section -->
+    <header>
+        <div class="name">Lê Hồng Sơn</div>
+        <div class="title">Lập trình viên Full Stack Senior · Giảng viên CNTT</div>
+        <div class="contact-info">
+            <span><i class="fas fa-phone"></i> 0349528472</span>
+            <span><i class="fas fa-envelope"></i> <a href="mailto:tabletkindfire@gmail.com">tabletkindfire@gmail.com</a></span>
+            <span><i class="fab fa-github"></i> <a href="https://github.com/tomnyson" target="_blank">github.com/tomnyson</a></span>
+            <span><i class="fas fa-map-marker-alt"></i> Buôn Ma Thuột, Đắk Lắk, Việt Nam</span>
+        </div>
+    </header>
+
+    <div class="cv-body">
+        <!-- Main Column (Left) -->
+        <main class="main-column">
+            <!-- Tóm tắt -->
+            <section class="section">
+                <div class="section-title"><i class="fas fa-user-circle"></i> Tóm tắt</div>
+                <p>Với hơn một thập kỷ thực chiến trong ngành phần mềm, tôi là một Senior Full Stack Developer đam mê xây dựng các kiến trúc hệ thống backend sẵn sàng cao, bảo mật và dễ dàng mở rộng. Chuyên môn cốt lõi của tôi tập trung vào hệ sinh thái Node.js, tối ưu hóa truy vấn trên PostgreSQL/MongoDB và triển khai hạ tầng cloud mạnh mẽ với GCP cùng Docker.</p>
+                <p>Không chỉ dừng lại ở việc phát triển phần mềm, tôi tự hào với hơn 7 năm gắn bó với sự nghiệp đào tạo tại FPT (FPT Polytechnic & FPT School). Sự kết hợp giữa kinh nghiệm giải quyết các bài toán kiến trúc phức tạp và đam mê giáo dục giúp tôi truyền đạt những kiến thức công nghệ thực tế nhất, rút ngắn khoảng cách giữa lý thuyết và yêu cầu khắt khe của doanh nghiệp cho học viên.</p>
+            </section>
+
+            <!-- Kinh nghiệm làm việc -->
+            <section class="section">
+                <div class="section-title"><i class="fas fa-briefcase"></i> Kinh nghiệm làm việc</div>
+                <div class="timeline">
+                    <!-- Job 1 -->
+                    <div class="timeline-item">
+                        <div class="job-title">Kỹ sư Full Stack & Tư vấn Giải pháp AI</div>
+                        <div class="job-meta">Freelance | 05/2023 - Hiện tại</div>
+                        <ul>
+                            <li>Thiết kế, xây dựng và tối ưu các hệ thống ứng dụng Web/SaaS hiệu năng cao sử dụng React, Next.js, Node.js, PostgreSQL và MongoDB.</li>
+                            <li>Tư vấn kiến trúc hệ thống và tích hợp mô hình AI Agents (Claude, Gemini, OpenAI) giúp tự động hóa quy trình nghiệp vụ cho khách hàng doanh nghiệp.</li>
+                            <li>Thiết kế và triển khai hạ tầng đám mây với Docker, Google Cloud Platform (GCP) và AWS, đảm bảo độ sẵn sàng cao, bảo mật và CI/CD tự động.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="timeline-item">
+                        <div class="job-title">Giảng viên Công nghệ Thông tin</div>
+                        <div class="job-meta">FPT School (FPT Education) | 05/2023 - Hiện tại</div>
+                        <ul>
+                            <li>Giảng dạy chuyên ngành CNTT, Lập trình Web và Khoa học máy tính theo phương pháp học tập qua dự án thực tế (Project-based learning).</li>
+                            <li>Hướng dẫn học sinh/sinh viên thực hiện các đồ án phần mềm, rèn luyện tư duy logic, kỹ năng giải quyết vấn đề và văn hóa viết code chuẩn mực.</li>
+                            <li>Cập nhật các công nghệ lập trình mới và công cụ AI vào nội dung giảng dạy, giúp người học sớm tiếp cận với thực tiễn doanh nghiệp.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="timeline-item">
+                        <div class="job-title">Lập trình viên Full Stack</div>
+                        <div class="job-meta">Tasselsoftware | 05/2019 - 04/2023</div>
+                        <ul>
+                            <li>Thiết kế và phát triển web app có khả năng mở rộng, hiệu quả và dễ bảo trì bằng React.js và Node.js.</li>
+                            <li>Xây dựng RESTful API với Node.js và Express.js để tích hợp cơ sở dữ liệu và các dịch vụ web bên ngoài.</li>
+                            <li>Phối hợp với đội ngũ kỹ thuật để xử lý vấn đề, cải thiện hiệu năng và độ ổn định hệ thống.</li>
+                            <li>Làm việc cùng DevOps để triển khai ứng dụng lên AWS và Azure bằng Docker.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 4 -->
+                    <div class="timeline-item">
+                        <div class="job-title">Lập trình viên Blockchain</div>
+                        <div class="job-meta">Bacoor Vietnam | 08/2018 - 10/2019</div>
+                        <ul>
+                            <li>Phát triển smart contract bằng Solidity và các backend service phục vụ hệ thống blockchain an toàn.</li>
+                            <li>Sử dụng Node.js, JavaScript và TypeScript cho backend development và tích hợp dịch vụ.</li>
+                            <li>Làm việc trên môi trường Linux và áp dụng kỹ thuật mật mã cho giao tiếp bảo mật.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 5 -->
+                    <div class="timeline-item">
+                        <div class="job-title">Lập trình viên PHP</div>
+                        <div class="job-meta">Vmax | 04/2017 - 06/2018</div>
+                        <ul>
+                            <li>Phát triển giải pháp Magento e-commerce và CMS theo quy trình phát triển phần mềm.</li>
+                            <li>Tùy biến và triển khai Magento extensions, themes theo yêu cầu kinh doanh.</li>
+                            <li>Hỗ trợ thành viên trong đội và cập nhật các phiên bản, thay đổi mới của Magento.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Job 6 -->
+                    <div class="timeline-item">
+                        <div class="job-title">Lập trình viên PHP</div>
+                        <div class="job-meta">Goodland | 03/2016 - 11/2016</div>
+                        <ul>
+                            <li>Lập trình phần mềm từ tài liệu thiết kế, tuân thủ tiêu chuẩn chất lượng code.</li>
+                            <li>Tham gia code review, refactoring và chủ động học công nghệ mới.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar (Right) -->
+        <aside class="sidebar">
+            <!-- Kỹ năng -->
+            <section class="section">
+                <div class="section-title"><i class="fas fa-tools"></i> Kỹ năng</div>
+                
+                <div class="skill-group">
+                    <div class="skill-group-title">Ngôn ngữ lập trình</div>
+                    <div class="tags">
+                        <span class="tag">JavaScript</span> <span class="tag">Node.js</span> <span class="tag">TypeScript</span> 
+                        <span class="tag">PHP</span> <span class="tag">Java</span> <span class="tag">C#</span> <span class="tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title">Frameworks & Thư viện</div>
+                    <div class="tags">
+                        <span class="tag">React.js</span> <span class="tag">Next.js</span> <span class="tag">Express.js</span> 
+                        <span class="tag">Nest.js</span> <span class="tag">Laravel</span> <span class="tag">React Native</span> 
+                        <span class="tag">Flutter</span> <span class="tag">WordPress</span> <span class="tag">Flask</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title">Cơ sở dữ liệu & Cache</div>
+                    <div class="tags">
+                        <span class="tag">PostgreSQL</span> <span class="tag">MongoDB</span> <span class="tag">MySQL</span> 
+                        <span class="tag">DynamoDB</span> <span class="tag">Supabase</span> <span class="tag">Redis</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title">Công cụ & DevOps</div>
+                    <div class="tags">
+                        <span class="tag">Git</span> <span class="tag">Docker</span> <span class="tag">Linux</span> 
+                        <span class="tag">Elasticsearch</span> <span class="tag">Postman</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title">Nền tảng Cloud</div>
+                    <div class="tags">
+                        <span class="tag">Google Cloud (GCP)</span> <span class="tag">AWS</span> <span class="tag">Azure</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <div class="skill-group-title">AI & Tự động hóa</div>
+                    <div class="tags">
+                        <span class="tag">Claude Code</span> <span class="tag">Google Gemini</span> <span class="tag">ChatGPT</span> 
+                        <span class="tag">Cursor</span> <span class="tag">Agentic AI</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title">Kỹ năng mềm</div>
+                    <div class="tags">
+                        <span class="tag">Quản lý thời gian</span> <span class="tag">Giải quyết vấn đề</span> 
+                        <span class="tag">Làm việc nhóm</span> <span class="tag">Tư duy phản biện</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Học vấn -->
+            <section class="section">
+                <div class="section-title"><i class="fas fa-graduation-cap"></i> Học vấn</div>
+                <div class="edu-item">
+                    <div class="edu-degree">Cử nhân Công nghệ Thông tin</div>
+                    <div class="edu-school">VNUHCM - Trường Đại học Khoa học Tự nhiên</div>
+                    <div class="edu-date">2011 - 2018</div>
+                    <ul style="font-size: 0.9rem; padding-left: 15px; margin-top: 8px;">
+                        <li>Học phương pháp phát triển phần mềm, Python, Java và thiết kế kiến trúc hệ thống.</li>
+                        <li>Tham gia hackathon và coding challenge để rèn luyện kỹ năng.</li>
+                        <li>Duy trì kỷ luật cá nhân, liên tục nâng cao chuyên môn và ngoại ngữ.</li>
+                    </ul>
+                </div>
+            </section>
+        </aside>
+    </div>
+</div>
+
+</body>
+</html>
