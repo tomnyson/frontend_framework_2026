@@ -1,9 +1,7 @@
 {
     "folders": [
         {
-            "path": "."
-        },
-        {
+            "name": "demo-project-2026",
             "path": "../.."
         }
     ]

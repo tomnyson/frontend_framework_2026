@@ -1,16 +1,23 @@
 <script setup>
 import { ref, computed } from 'vue';
+import ListProduct from './components/ProductList.vue';
+import ProductListAPI from './components/ProductListAPI.vue';
 const name = ref('');
 const email = ref('');
 const ktemail = ref(true);
 const toan = ref (0);
 const ly = ref (0);
 const hoa = ref (0);
-
+const hinh = ref('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6dvRhsiLCzySTyky6kTqqScDi4pWzLjDZsKsjcXP6hMZ0aQ690gv6bkw&s=10');
+//buoi: https://img.magnific.com/premium-photo/sad-person-sitting-alone-feeling-depressed-lonely_53419-21859.jpg?semt=ais_hybrid&w=740&q=80
 // const dtb = (toan.value + ly.value + hoa.value) / 3;
 const dtb = computed(() => (Number(toan.value) + Number(ly.value) + Number(hoa.value)) / 3);
-
-
+const doihinhVUI = () => {
+    hinh.value = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6dvRhsiLCzySTyky6kTqqScDi4pWzLjDZsKsjcXP6hMZ0aQ690gv6bkw&s=10';
+};
+const doihinhBUON = () => {
+    hinh.value = 'https://img.magnific.com/premium-photo/sad-person-sitting-alone-feeling-depressed-lonely_53419-21859.jpg?semt=ais_hybrid&w=740&q=80';
+};
 
 function isValidEmail(email) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -27,7 +34,9 @@ const chageEmail = (event) => {
 </script>
 
 <template>
-   <div class="toan-ly-hoa">
+  <div class="container">
+  <ProductListAPI />
+   <!-- <div class="toan-ly-hoa">
 <div class="toan">
         <label for="toan">toan:</label>
         <input type="text" id="toan" name="toan" v-model="toan" required placeholder="Nhập tên của bạn">
@@ -66,9 +75,12 @@ const chageEmail = (event) => {
     </form>
     <p> Name: {{ name }}</p>
     <p> Email: {{ email }}</p>
-    <p> Note: {{ note }}</p>
-  </div>
-
+    <p> Note: {{ note }}</p> -->
+  <!-- </div>
+   <img :src="hinh" alt="Hình ảnh" width="300" height="300">
+  <button type="submit" @click="doihinhVUI">Vui</button>
+  <button type="submit" @click="doihinhBUON">Buon</button> -->
+  </div> 
 </template>
 
 <style scoped>
