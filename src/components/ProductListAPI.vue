@@ -1,8 +1,18 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, reactive } from 'vue';
 import apiService from '../api/api.js';
 const isLoading = ref(false);
 const products = ref([]);
+const product=reactive({
+  id: '',
+  ten: '',
+  mo_ta: '',
+  hinh_anh: '',
+  gia: 0,
+  ton_kho: 0
+});
+
+
 onMounted(() => {
   // Fetch products when component is mounted
   console.log('Fetching products...');
@@ -12,7 +22,7 @@ onMounted(() => {
 const fetchProducts = async () => {
   isLoading.value = true;
   try {
-    const response = await apiService.get('products');
+    const response = await apiService.get('products?_sort=-gia');
     products.value = response.data;
     console.log('Products fetched:', products.value);
   } catch (error) {
@@ -32,48 +42,113 @@ const deleteProduct = (id) => {
     products.splice(index, 1);
   }
 }
+const addProduct = async () => {
+  try {
+    /**
+     * them san pham => POST method
+     */
+    const payload = {
+      id: product.id,
+      ten: product.ten,
+      mo_ta: product.mo_ta,
+      hinh_anh: product.hinh_anh,
+      gia: product.gia,
+      ton_kho: product.ton_kho
+    };
+    const response = await apiService.post('products', payload);
+    console.log('Product added:', response.data);
+    alert('Sản phẩm đã được thêm thành công!');
+    fetchProducts(); // Refresh the product list after adding a new product
+    // Clear the form after successful submission
+    Object.assign(product, {
+      id: '',
+      ten: '',
+      mo_ta: '',
+      hinh_anh: '',
+      gia: 0,
+      ton_kho: 0
+    });
+  } catch (error) {
+    console.error('Error adding product:', error);
+  }
+}
+
+const saveProduct = async () => {
+  try {
+    /**
+     * them san pham => POST method
+     */
+    const payload = {
+      id: product.id,
+      ten: product.ten,
+      mo_ta: product.mo_ta,
+      hinh_anh: product.hinh_anh,
+      gia: product.gia,
+      ton_kho: product.ton_kho
+    };
+    const response = await apiService.put(`products/${product.id}`, payload);
+    console.log('Product updated:', response.data);
+    alert('Sản phẩm đã được cập nhật thành công!');
+    fetchProducts(); // Refresh the product list after updating a product
+    // Clear the form after successful submission
+    Object.assign(product, {
+      id: '',
+      ten: '',
+      mo_ta: '',
+      hinh_anh: '',
+      gia: 0,
+      ton_kho: 0
+    });
+  } catch (error) {
+    console.error('Error updating product:', error);
+  }
+}
+const editProduct = async (productToEdit) => {
+  Object.assign(product, productToEdit);
+}
 </script>
 
 <template>
   <div class="row">
     <h2>Thêm sản phẩm</h2>
+    {{ product }}
     <form action="#" method="POST" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="productImage" class="form-label">Mã sản phẩm</label>
-        <input class="form-control" type="text" id="productImage" name="product_image">
+        <input class="form-control" v-model="product.id" type="text" id="productImage" name="product_image">
       </div>
 
       <div class="mb-3">
         <label for="productName" class="form-label">Tên sản phẩm</label>
-        <input type="text" class="form-control" id="productName" name="product_name"
-          value="Tai Nghe Bluetooth Không Dây Pro" required>
+        <input type="text" class="form-control" id="productName" name="product_name" v-model="product.ten">
       </div>
 
       <div class="mb-3">
         <label for="productDesc" class="form-label">Mô tả sản phẩm</label>
-        <textarea class="form-control" id="productDesc" name="product_desc" rows="3"
-          required>Chống ồn chủ động ANC, âm bass sâu, pin sử dụng liên tục 8 giờ.</textarea>
+        <textarea class="form-control" v-model="product.mo_ta" id="productDesc" name="product_desc" rows="3"
+          required></textarea>
       </div>
       <div class="mb-3">
         <label for="productImage" class="form-label">Hình ảnh sản phẩm</label>
-        <input class="form-control" type="text" id="productImage" name="product_image">
+        <input class="form-control" v-model="product.hinh_anh" type="text" id="productImage" name="product_image">
       </div>
 
 
       <div class="row g-3 mb-3">
         <div class="col-md-6">
           <label for="productPrice" class="form-label">Giá (₫)</label>
-          <input type="number" class="form-control" id="productPrice" name="product_price" value="850000" min="0"
+          <input type="number" class="form-control" v-model="product.gia" id="productPrice" name="product_price" min="0"
             step="1000" required>
         </div>
 
         <div class="col-md-6">
           <label for="productStock" class="form-label">Tồn kho</label>
-          <input type="number" class="form-control" id="productStock" name="product_stock" value="120" min="0" required>
+          <input type="number" class="form-control" v-model="product.ton_kho" id="productStock" name="product_stock" min="0" required>
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary w-100">Lưu Sản Phẩm</button>
+      <button type="button" class="btn btn-primary w-100" @click="addProduct">Lưu Sản Phẩm</button>
+       <button type="button" class="btn btn-success w-100 mt-2" @click="saveProduct">cập nhật Sản Phẩm</button>
     </form>
     <h2>Danh sách sản phẩm</h2>
     <div v-show="isLoading" class="spinner-border" role="status">
@@ -97,6 +172,8 @@ const deleteProduct = (id) => {
                        </span> -->
             <strong :class="{ blinksmooth: product.ton_kho < 20 }">Tồn kho: {{ product.ton_kho }} </strong> <br />
             <button class="btn btn-danger" @click="deleteProduct(product.id)">xóa sản phẩm</button>
+            <button class="btn btn-warning" @click="editProduct(product)">Sửa sản phẩm</button>
+
           </p>
         </div>
       </div>
