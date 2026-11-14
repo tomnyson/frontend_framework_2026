@@ -36,6 +36,45 @@ const deleteProduct = (id) => {
 
 <template>
   <div class="row">
+    <h2>Thêm sản phẩm</h2>
+    <form action="#" method="POST" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="productImage" class="form-label">Mã sản phẩm</label>
+        <input class="form-control" type="text" id="productImage" name="product_image">
+      </div>
+
+      <div class="mb-3">
+        <label for="productName" class="form-label">Tên sản phẩm</label>
+        <input type="text" class="form-control" id="productName" name="product_name"
+          value="Tai Nghe Bluetooth Không Dây Pro" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="productDesc" class="form-label">Mô tả sản phẩm</label>
+        <textarea class="form-control" id="productDesc" name="product_desc" rows="3"
+          required>Chống ồn chủ động ANC, âm bass sâu, pin sử dụng liên tục 8 giờ.</textarea>
+      </div>
+      <div class="mb-3">
+        <label for="productImage" class="form-label">Hình ảnh sản phẩm</label>
+        <input class="form-control" type="text" id="productImage" name="product_image">
+      </div>
+
+
+      <div class="row g-3 mb-3">
+        <div class="col-md-6">
+          <label for="productPrice" class="form-label">Giá (₫)</label>
+          <input type="number" class="form-control" id="productPrice" name="product_price" value="850000" min="0"
+            step="1000" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="productStock" class="form-label">Tồn kho</label>
+          <input type="number" class="form-control" id="productStock" name="product_stock" value="120" min="0" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Lưu Sản Phẩm</button>
+    </form>
     <h2>Danh sách sản phẩm</h2>
     <div v-show="isLoading" class="spinner-border" role="status">
     </div>
@@ -47,7 +86,8 @@ const deleteProduct = (id) => {
           <p class="card-text">{{ product.mo_ta }}</p>
           <p class="card-text"><strong>Giá:</strong> {{ product.gia.toLocaleString('vi-VN', {
             style: 'currency',
-            currency: 'VND' }) }}</p>
+            currency: 'VND'
+          }) }}</p>
           <p class="card-text">
             <!-- <span style="color: red;" v-if="product.ton_kho<20">
                         <strong style="color: red;">Tồn kho:</strong> {{ product.ton_kho}}
