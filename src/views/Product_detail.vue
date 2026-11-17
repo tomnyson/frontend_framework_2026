@@ -1,0 +1,3 @@
+<template>
+  <h1>day la trang chi tiet san pham</h1>
+</template>

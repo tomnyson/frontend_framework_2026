@@ -1,0 +1,117 @@
+---
+title: Tài khoản của tôi – DeskFlow
+description: Quản lý đơn hàng, địa chỉ và thông tin cá nhân.
+nav: none
+css: account
+---
+    <div class="container">
+      {{breadcrumb:Trang chủ>index.html|Tài khoản}}
+    </div>
+    <section class="section" style="padding-top:16px">
+      <div class="container account">
+        <input type="radio" name="acc" id="acc-overview" checked />
+        <input type="radio" name="acc" id="acc-orders" />
+        <input type="radio" name="acc" id="acc-address" />
+        <input type="radio" name="acc" id="acc-profile" />
+
+        <aside class="account-nav">
+          <div class="account-user">
+            <span class="avatar-lg">NA</span>
+            <div><strong>Nguyễn Văn An</strong><small>Hạng Vàng · 2.450 điểm</small></div>
+          </div>
+          <nav>
+            <label for="acc-overview">🏠 Tổng quan</label>
+            <label for="acc-orders">🧾 Đơn hàng</label>
+            <label for="acc-address">📍 Sổ địa chỉ</label>
+            <label for="acc-profile">👤 Thông tin cá nhân</label>
+            <a href="wishlist.html">♡ Yêu thích</a>
+            <a href="rewards.html">⭐ Tích điểm</a>
+            <a href="login.html">🚪 Đăng xuất</a>
+          </nav>
+        </aside>
+
+        <div>
+          <!-- ===== OVERVIEW ===== -->
+          <section class="panel panel--overview">
+            <h1>Xin chào, An 👋</h1>
+            <div class="stat-cards">
+              <div class="box"><strong>4</strong><span>Đơn hàng</span></div>
+              <div class="box"><strong>2.450</strong><span>Điểm thưởng</span></div>
+              <div class="box"><strong>2</strong><span>Sản phẩm đang bảo hành</span></div>
+            </div>
+            <div class="box">
+              <div class="section__head" style="margin-bottom:12px">
+                <h2 style="margin:0">Đơn hàng gần nhất</h2>
+                <label for="acc-orders" class="link-more" style="cursor:pointer">Xem tất cả</label>
+              </div>
+              <ol class="timeline-h">
+                <li class="is-done">Đã đặt</li>
+                <li class="is-done">Đã xác nhận</li>
+                <li>Đang giao</li>
+                <li>Hoàn thành</li>
+              </ol>
+              <p style="margin-top:16px;font-size:14px"><strong>#DF10248</strong> · 3 sản phẩm · 11.020.000₫ · <a href="account-order.html" class="link-more">Chi tiết</a></p>
+            </div>
+          </section>
+
+          <!-- ===== ORDERS ===== -->
+          <section class="panel panel--orders">
+            <h1>Đơn hàng của tôi</h1>
+            <div class="box" style="padding:0;overflow-x:auto">
+              <table class="order-table">
+                <thead><tr><th>Mã đơn</th><th>Ngày đặt</th><th>Sản phẩm</th><th>Tổng tiền</th><th>Trạng thái</th><th></th></tr></thead>
+                <tbody>
+                  <tr><td><strong>#DF10248</strong></td><td>16/11/2026</td><td>3</td><td>11.020.000₫</td><td><span class="badge badge--info">Đã xác nhận</span></td><td><a href="account-order.html" class="link-more">Xem</a></td></tr>
+                  <tr><td><strong>#DF10102</strong></td><td>02/10/2026</td><td>1</td><td>5.290.000₫</td><td><span class="badge badge--success">Hoàn thành</span></td><td><a href="account-order.html" class="link-more">Xem</a></td></tr>
+                  <tr><td><strong>#DF09877</strong></td><td>18/08/2026</td><td>2</td><td>1.280.000₫</td><td><span class="badge badge--success">Hoàn thành</span></td><td><a href="account-order.html" class="link-more">Xem</a></td></tr>
+                  <tr><td><strong>#DF09530</strong></td><td>05/06/2026</td><td>1</td><td>390.000₫</td><td><span class="badge badge--danger">Đã huỷ</span></td><td><a href="account-order.html" class="link-more">Xem</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- ===== ADDRESS ===== -->
+          <section class="panel panel--address">
+            <h1>Sổ địa chỉ</h1>
+            <div class="address-grid">
+              <div class="box address-card">
+                <strong>Nhà riêng</strong> <span class="badge badge--success">Mặc định</span>
+                <p>Nguyễn Văn An · 0901 234 567<br />12 Đường Mẫu, Phường Sài Gòn, TP. Hồ Chí Minh</p>
+                <div class="chips"><a href="#" class="chip">Sửa</a></div>
+              </div>
+              <div class="box address-card">
+                <strong>Văn phòng</strong>
+                <p>Nguyễn Văn An · 0901 234 567<br />Tầng 5, 99 Đường Mẫu, Phường Bến Thành, TP. Hồ Chí Minh</p>
+                <div class="chips"><a href="#" class="chip">Sửa</a><a href="#" class="chip">Đặt mặc định</a><a href="#" class="chip">Xoá</a></div>
+              </div>
+            </div>
+            <details class="box" style="margin-top:16px">
+              <summary class="btn btn--outline" style="list-style:none">+ Thêm địa chỉ mới</summary>
+              <form action="account.html" method="get" style="margin-top:16px">
+                <div class="field"><label for="ad-name">Người nhận</label><input id="ad-name" class="input" name="name" required /></div>
+                <div class="field"><label for="ad-phone">Số điện thoại</label><input id="ad-phone" class="input" type="tel" name="phone" required pattern="0[0-9]{9}" /></div>
+                <div class="field"><label for="ad-province">Tỉnh / Thành phố</label><select id="ad-province" class="select" name="province" required><option value="">Chọn</option><option>TP. Hồ Chí Minh</option><option>TP. Hà Nội</option><option>TP. Đà Nẵng</option></select></div>
+                <div class="field"><label for="ad-ward">Phường / Xã</label><select id="ad-ward" class="select" name="ward" required><option value="">Chọn</option><option>Phường Sài Gòn</option><option>Phường Bến Thành</option></select></div>
+                <div class="field"><label for="ad-street">Số nhà, tên đường</label><input id="ad-street" class="input" name="street" required /></div>
+                <button type="submit" class="btn">Lưu địa chỉ</button>
+              </form>
+            </details>
+          </section>
+
+          <!-- ===== PROFILE ===== -->
+          <section class="panel panel--profile">
+            <h1>Thông tin cá nhân</h1>
+            <form class="box" action="account.html" method="get">
+              <div class="field"><label for="pf-name">Họ và tên</label><input id="pf-name" class="input" name="name" value="Nguyễn Văn An" required /></div>
+              <div class="field"><label for="pf-email">Email</label><input id="pf-email" class="input" type="email" name="email" value="an.nguyen@example.com" required /></div>
+              <div class="field"><label for="pf-phone">Số điện thoại</label><input id="pf-phone" class="input" type="tel" name="phone" value="0901234567" pattern="0[0-9]{9}" required /></div>
+              <div class="field"><label for="pf-dob">Ngày sinh</label><input id="pf-dob" class="input" type="date" name="dob" value="1995-04-12" /></div>
+              <h3 style="margin:24px 0 12px">Đổi mật khẩu</h3>
+              <div class="field"><label for="pf-old">Mật khẩu hiện tại</label><input id="pf-old" class="input" type="password" name="old_password" autocomplete="current-password" /></div>
+              <div class="field"><label for="pf-new">Mật khẩu mới</label><input id="pf-new" class="input" type="password" name="new_password" minlength="8" autocomplete="new-password" /></div>
+              <button type="submit" class="btn">Lưu thay đổi</button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>

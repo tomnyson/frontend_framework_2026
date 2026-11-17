@@ -1,0 +1,55 @@
+"""Sample catalogue used to render repeated cards. Pure data, no logic."""
+
+PRODUCTS = (
+    {"id": "p1", "name": "Bàn nâng hạ Nomad Pro", "sku": "ND01", "cat": "Bàn nâng hạ",
+     "price": "8.990.000₫", "compare": "10.990.000₫", "from": True, "badges": ("new", "free")},
+    {"id": "p2", "name": "Bàn nâng hạ Nomad Core", "sku": "ND02", "cat": "Bàn nâng hạ",
+     "price": "6.490.000₫", "compare": "7.490.000₫", "from": True, "badges": ("free",)},
+    {"id": "p3", "name": "Ghế công thái học Breeze", "sku": "CH05", "cat": "Ghế công thái học",
+     "price": "5.290.000₫", "compare": "6.190.000₫", "from": False, "badges": ("new",)},
+    {"id": "p4", "name": "Kê màn hình 2 tầng Cloud", "sku": "MR02", "cat": "Giải pháp màn hình",
+     "price": "890.000₫", "compare": "1.090.000₫", "from": False, "badges": ()},
+    {"id": "p5", "name": "Arm màn hình đơn Glide", "sku": "MA01", "cat": "Giải pháp màn hình",
+     "price": "1.290.000₫", "compare": "", "from": False, "badges": ("soldout",)},
+    {"id": "p6", "name": "Cốc giữ nhiệt Warmly 500ml", "sku": "TC01", "cat": "Cốc giữ nhiệt",
+     "price": "390.000₫", "compare": "450.000₫", "from": False, "badges": ()},
+    {"id": "p7", "name": "Đèn treo màn hình Halo", "sku": "LT02", "cat": "Đèn chiếu sáng",
+     "price": "690.000₫", "compare": "", "from": False, "badges": ("new",)},
+    {"id": "p8", "name": "Khay quản lý dây cáp Tidy", "sku": "AC03", "cat": "Phụ kiện",
+     "price": "250.000₫", "compare": "320.000₫", "from": False, "badges": ()},
+    {"id": "p9", "name": "Ghế công thái học Flow Lite", "sku": "CH03", "cat": "Ghế công thái học",
+     "price": "3.490.000₫", "compare": "3.990.000₫", "from": False, "badges": ("free",)},
+    {"id": "p10", "name": "Tủ hồ sơ di động Cube", "sku": "ST01", "cat": "Lưu trữ",
+     "price": "1.890.000₫", "compare": "", "from": True, "badges": ()},
+    {"id": "p11", "name": "Arm màn hình đôi Glide Duo", "sku": "MA02", "cat": "Giải pháp màn hình",
+     "price": "2.190.000₫", "compare": "2.590.000₫", "from": False, "badges": ("new",)},
+    {"id": "p12", "name": "Bàn phím cơ Silent 75", "sku": "KB01", "cat": "Bàn phím & chuột",
+     "price": "1.590.000₫", "compare": "1.890.000₫", "from": False, "badges": ()},
+)
+
+POSTS = (
+    {"id": "blog1", "date": "2026-11-10", "label": "10/11/2026", "tag": "Hướng dẫn chọn mua",
+     "title": "5 sai lầm khi chọn bàn nâng hạ lần đầu",
+     "excerpt": "Chiều cao tối thiểu, tải trọng, số động cơ – những điều cần biết trước khi xuống tiền."},
+    {"id": "blog2", "date": "2026-11-03", "label": "03/11/2026", "tag": "Sức khoẻ",
+     "title": "Cách chỉnh ghế công thái học đúng chuẩn",
+     "excerpt": "Hướng dẫn từng bước chỉnh tựa lưng, kê tay và độ sâu ghế để ngồi lâu không mỏi."},
+    {"id": "blog3", "date": "2026-10-27", "label": "27/10/2026", "tag": "Góc làm việc",
+     "title": "Setup góc làm việc tối giản dưới 15 triệu",
+     "excerpt": "Gợi ý combo bàn, ghế và phụ kiện giúp bạn có góc làm việc gọn gàng, hiệu quả."},
+    {"id": "blog4", "date": "2026-10-20", "label": "20/10/2026", "tag": "Sức khoẻ",
+     "title": "Đứng hay ngồi: tỉ lệ nào là hợp lý?",
+     "excerpt": "Gợi ý chu kỳ đứng – ngồi trong ngày làm việc 8 tiếng để giảm mỏi lưng."},
+    {"id": "blog5", "date": "2026-10-12", "label": "12/10/2026", "tag": "Góc làm việc",
+     "title": "Quản lý dây cáp gọn gàng trong 15 phút",
+     "excerpt": "Khay, kẹp và ống bọc – bộ ba giúp mặt bàn sạch sẽ không một sợi dây."},
+    {"id": "blog6", "date": "2026-10-05", "label": "05/10/2026", "tag": "Hướng dẫn chọn mua",
+     "title": "Chọn arm màn hình theo kích thước và trọng lượng",
+     "excerpt": "Bảng tra nhanh VESA, tải trọng và chuẩn kẹp cho từng loại màn hình."},
+)
+
+BADGE_LABELS = {
+    "new": ("badge--new", "Sản phẩm mới"),
+    "free": ("badge--free", "Miễn phí lắp đặt"),
+    "soldout": ("badge--soldout", "Tạm hết"),
+}

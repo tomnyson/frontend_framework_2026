@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng nhập – DeskFlow Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body>
+  <div class="login">
+    <div class="login__art">
+      <img src="https://picsum.photos/seed/adminlogin/1000/1200" alt="" />
+      <div class="login__art-text">
+        <h2>Quản lý cửa hàng DeskFlow dễ dàng hơn mỗi ngày</h2>
+        <p>Sản phẩm, đơn hàng, khách hàng – tất cả trong một nơi.</p>
+      </div>
+    </div>
+
+    <div class="login__form">
+      <div class="login__box">
+        <a href="../index.html" class="logo">Desk<span>Flow</span></a>
+        <h1>Đăng nhập quản trị</h1>
+        <p>Nhập thông tin tài khoản để tiếp tục</p>
+
+        <!-- Giao diện tĩnh: submit chuyển thẳng sang dashboard -->
+        <form action="index.html" method="get">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" class="input" type="email" name="email" placeholder="admin@deskflow.example" required />
+          </div>
+          <div class="field">
+            <label for="password">Mật khẩu</label>
+            <input id="password" class="input" type="password" name="password" minlength="6" placeholder="••••••••" required />
+          </div>
+          <div class="login__row">
+            <label><input type="checkbox" name="remember" /> Ghi nhớ đăng nhập</label>
+            <a href="#" class="link-more">Quên mật khẩu?</a>
+          </div>
+          <button type="submit" class="btn btn--block">Đăng nhập</button>
+        </form>
+
+        <p class="hint">Đây là giao diện mẫu – nhập email bất kỳ và mật khẩu từ 6 ký tự để vào dashboard.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

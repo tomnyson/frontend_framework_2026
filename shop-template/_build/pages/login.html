@@ -1,0 +1,79 @@
+---
+title: Đăng nhập / Đăng ký – DeskFlow
+description: Đăng nhập hoặc tạo tài khoản DeskFlow để theo dõi đơn hàng và tích điểm.
+nav: none
+css: account
+---
+    <section class="section">
+      <div class="container">
+        <div class="auth">
+          <div class="auth__art">
+            <img src="https://picsum.photos/seed/authart/900/1100" alt="" />
+            <div>
+              <h2>Thành viên DeskFlow nhận ưu đãi riêng mỗi tháng</h2>
+              <p>Tích điểm mọi đơn hàng · Theo dõi bảo hành · Thanh toán nhanh hơn</p>
+            </div>
+          </div>
+
+          <div class="auth__box">
+            <input type="radio" name="auth-tab" id="tab-login" checked />
+            <input type="radio" name="auth-tab" id="tab-register" />
+            <div class="auth-tabs">
+              <label for="tab-login">Đăng nhập</label>
+              <label for="tab-register">Đăng ký</label>
+            </div>
+
+            <!-- ===== LOGIN ===== -->
+            <form class="auth-form--login" action="account.html" method="get">
+              <div class="field">
+                <label for="li-email">Email hoặc số điện thoại</label>
+                <input id="li-email" class="input" name="username" required autocomplete="username" />
+              </div>
+              <div class="field">
+                <label for="li-pass">Mật khẩu</label>
+                <input id="li-pass" class="input" type="password" name="password" required minlength="6" autocomplete="current-password" />
+              </div>
+              <div class="auth-row">
+                <label><input type="checkbox" name="remember" /> Ghi nhớ</label>
+                <details>
+                  <summary class="link-more" style="cursor:pointer;list-style:none">Quên mật khẩu?</summary>
+                  <p class="section__sub" style="font-size:13px;margin-top:8px">Nhập email ở trên rồi bấm “Gửi link khôi phục”.</p>
+                  <button type="submit" formaction="login.html" formnovalidate class="btn btn--outline btn--sm" style="margin-top:8px">Gửi link khôi phục</button>
+                </details>
+              </div>
+              <button type="submit" class="btn btn--block">Đăng nhập</button>
+            </form>
+
+            <!-- ===== REGISTER ===== -->
+            <form class="auth-form--register" action="account.html" method="get">
+              <div class="field">
+                <label for="rg-name">Họ và tên</label>
+                <input id="rg-name" class="input" name="name" required minlength="2" autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="rg-phone">Số điện thoại</label>
+                <input id="rg-phone" class="input" type="tel" name="phone" required pattern="0[0-9]{9}" autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="rg-email">Email</label>
+                <input id="rg-email" class="input" type="email" name="email" required autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="rg-pass">Mật khẩu (tối thiểu 8 ký tự)</label>
+                <input id="rg-pass" class="input" type="password" name="password" required minlength="8" autocomplete="new-password" />
+              </div>
+              <div class="auth-row">
+                <label><input type="checkbox" required /> Tôi đồng ý với <a href="policy.html#dieu-khoan" class="link-more">điều khoản</a></label>
+              </div>
+              <button type="submit" class="btn btn--block">Tạo tài khoản</button>
+            </form>
+
+            <div class="divider">hoặc tiếp tục với</div>
+            <div class="social-login">
+              <a href="account.html" class="btn btn--outline">Google</a>
+              <a href="account.html" class="btn btn--outline">Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

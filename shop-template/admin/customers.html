@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khách hàng – DeskFlow Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body>
+  <div class="admin">
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" aria-label="Mở menu" />
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <a href="index.html" class="logo">Desk<span>Flow</span><small>Admin Panel</small></a>
+      <p class="sidebar__group">Tổng quan</p>
+      <a href="index.html" class="sidebar__link"><span>📊</span> Dashboard</a>
+      <p class="sidebar__group">Bán hàng</p>
+      <a href="orders.html" class="sidebar__link"><span>🧾</span> Đơn hàng<span class="count">12</span></a>
+      <a href="customers.html" class="sidebar__link is-active"><span>👥</span> Khách hàng</a>
+      <p class="sidebar__group">Danh mục</p>
+      <a href="products.html" class="sidebar__link"><span>📦</span> Sản phẩm</a>
+      <a href="categories.html" class="sidebar__link"><span>🗂️</span> Danh mục</a>
+      <div class="sidebar__foot">
+        <a href="../index.html" class="sidebar__link"><span>🌐</span> Xem website</a>
+        <a href="login.html" class="sidebar__link"><span>🚪</span> Đăng xuất</a>
+      </div>
+    </aside>
+
+    <div class="main">
+      <!-- ===== TOPBAR ===== -->
+      <header class="admin-topbar">
+        <label for="sidebar-toggle" class="action-btn sidebar-btn" aria-label="Menu">☰</label>
+        <input class="input search" type="search" placeholder="Tìm đơn hàng, sản phẩm, khách hàng..." />
+        <div class="admin-topbar__right">
+          <a href="orders.html" class="action-btn" aria-label="Thông báo">🔔</a>
+          <div class="user-chip">
+            <span class="avatar">QA</span>
+            <span>Quản trị viên<small>admin@deskflow.example</small></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="page-head">
+          <div>
+            <h1>Khách hàng</h1>
+            <p class="breadcrumb"><a href="index.html">Dashboard</a> / Khách hàng</p>
+          </div>
+          <a href="#" class="btn btn--outline">⬇ Xuất Excel</a>
+        </div>
+
+        <div class="kpis">
+          <div class="card"><p class="kpi__label">Tổng khách hàng</p><p class="kpi__value">1.284</p></div>
+          <div class="card"><p class="kpi__label">Khách mới (30 ngày)</p><p class="kpi__value">212</p></div>
+          <div class="card"><p class="kpi__label">Khách VIP</p><p class="kpi__value">38</p></div>
+          <div class="card"><p class="kpi__label">Giá trị TB / khách</p><p class="kpi__value">7,4tr₫</p></div>
+        </div>
+
+        <section class="card card--flush">
+          <form class="toolbar" action="#" method="get">
+            <input class="input" type="search" name="q" placeholder="Tên, email, SĐT..." />
+            <select class="select" name="tier" aria-label="Hạng">
+              <option value="">Mọi hạng</option>
+              <option>VIP</option>
+              <option>Thân thiết</option>
+              <option>Thường</option>
+              <option>Mới</option>
+            </select>
+            <button type="submit" class="btn btn--outline">Lọc</button>
+          </form>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Khách hàng</th><th>SĐT</th><th class="num">Số đơn</th><th class="num">Tổng chi tiêu</th><th>Đơn gần nhất</th><th>Hạng</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><div class="cell-product"><span class="avatar">NA</span><div><strong>Nguyễn Văn An</strong><small>an.nguyen@example.com</small></div></div></td>
+                  <td>0901 234 567</td>
+                  <td class="num">4</td>
+                  <td class="num">28.450.000₫</td>
+                  <td>16/11/2026</td>
+                  <td><span class="badge badge--warning">Thân thiết</span></td>
+                </tr>
+                <tr>
+                  <td><div class="cell-product"><span class="avatar">TB</span><div><strong>Trần Thị Bình</strong><small>binh.tran@example.com</small></div></div></td>
+                  <td>0912 345 678</td>
+                  <td class="num">2</td>
+                  <td class="num">9.580.000₫</td>
+                  <td>16/11/2026</td>
+                  <td><span class="badge badge--info">Thường</span></td>
+                </tr>
+                <tr>
+                  <td><div class="cell-product"><span class="avatar">LC</span><div><strong>Lê Hoàng Cường</strong><small>cuong.le@example.com</small></div></div></td>
+                  <td>0987 111 222</td>
+                  <td class="num">1</td>
+                  <td class="num">890.000₫</td>
+                  <td>15/11/2026</td>
+                  <td><span class="badge badge--success">Mới</span></td>
+                </tr>
+                <tr>
+                  <td><div class="cell-product"><span class="avatar">PD</span><div><strong>Phạm Minh Dũng</strong><small>dung.pham@example.com</small></div></div></td>
+                  <td>0933 444 555</td>
+                  <td class="num">6</td>
+                  <td class="num">52.300.000₫</td>
+                  <td>15/11/2026</td>
+                  <td><span class="badge badge--danger">VIP</span></td>
+                </tr>
+                <tr>
+                  <td><div class="cell-product"><span class="avatar">VH</span><div><strong>Võ Thu Hà</strong><small>ha.vo@example.com</small></div></div></td>
+                  <td>0977 888 999</td>
+                  <td class="num">1</td>
+                  <td class="num">0₫</td>
+                  <td>15/11/2026</td>
+                  <td><span class="badge badge--success">Mới</span></td>
+                </tr>
+                <tr>
+                  <td><div class="cell-product"><span class="avatar">ĐH</span><div><strong>Đặng Quốc Huy</strong><small>huy.dang@example.com</small></div></div></td>
+                  <td>0909 000 111</td>
+                  <td class="num">3</td>
+                  <td class="num">14.020.000₫</td>
+                  <td>14/11/2026</td>
+                  <td><span class="badge badge--info">Thường</span></td>
+                </tr>
+                <tr>
+                  <td><div class="cell-product"><span class="avatar">BL</span><div><strong>Bùi Ngọc Lan</strong><small>lan.bui@example.com</small></div></div></td>
+                  <td>0938 222 333</td>
+                  <td class="num">2</td>
+                  <td class="num">3.460.000₫</td>
+                  <td>14/11/2026</td>
+                  <td><span class="badge badge--info">Thường</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination">
+            <span>Hiển thị 1–7 trong 1.284 khách hàng</span>
+            <ul>
+              <li><a href="#">‹</a></li>
+              <li><a href="#" class="is-active">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">›</a></li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>

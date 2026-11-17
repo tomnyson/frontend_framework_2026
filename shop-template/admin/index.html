@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard – DeskFlow Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body>
+  <div class="admin">
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" aria-label="Mở menu" />
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <a href="index.html" class="logo">Desk<span>Flow</span><small>Admin Panel</small></a>
+      <p class="sidebar__group">Tổng quan</p>
+      <a href="index.html" class="sidebar__link is-active"><span>📊</span> Dashboard</a>
+      <p class="sidebar__group">Bán hàng</p>
+      <a href="orders.html" class="sidebar__link"><span>🧾</span> Đơn hàng<span class="count">12</span></a>
+      <a href="customers.html" class="sidebar__link"><span>👥</span> Khách hàng</a>
+      <p class="sidebar__group">Danh mục</p>
+      <a href="products.html" class="sidebar__link"><span>📦</span> Sản phẩm</a>
+      <a href="categories.html" class="sidebar__link"><span>🗂️</span> Danh mục</a>
+      <div class="sidebar__foot">
+        <a href="../index.html" class="sidebar__link"><span>🌐</span> Xem website</a>
+        <a href="login.html" class="sidebar__link"><span>🚪</span> Đăng xuất</a>
+      </div>
+    </aside>
+
+    <div class="main">
+      <!-- ===== TOPBAR ===== -->
+      <header class="admin-topbar">
+        <label for="sidebar-toggle" class="action-btn sidebar-btn" aria-label="Menu">☰</label>
+        <input class="input search" type="search" placeholder="Tìm đơn hàng, sản phẩm, khách hàng..." />
+        <div class="admin-topbar__right">
+          <a href="orders.html" class="action-btn" aria-label="Thông báo">🔔</a>
+          <div class="user-chip">
+            <span class="avatar">QA</span>
+            <span>Quản trị viên<small>admin@deskflow.example</small></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="page-head">
+          <div>
+            <h1>Dashboard</h1>
+            <p class="breadcrumb">Chào mừng trở lại 👋 Tổng quan hoạt động 7 ngày qua</p>
+          </div>
+          <div class="actions">
+            <select class="select" aria-label="Khoảng thời gian">
+              <option>7 ngày qua</option>
+              <option>30 ngày qua</option>
+              <option>Năm nay</option>
+            </select>
+            <a href="product-form.html" class="btn">+ Thêm sản phẩm</a>
+          </div>
+        </div>
+
+        <div class="kpis">
+          <div class="card">
+            <p class="kpi__label">Doanh thu</p>
+            <p class="kpi__value">182,2tr₫</p>
+            <span class="trend trend--up">▲ 12,5% so với tuần trước</span>
+          </div>
+          <div class="card">
+            <p class="kpi__label">Đơn hàng</p>
+            <p class="kpi__value">248</p>
+            <span class="trend trend--up">▲ 8,1%</span>
+          </div>
+          <div class="card">
+            <p class="kpi__label">Khách hàng mới</p>
+            <p class="kpi__value">64</p>
+            <span class="trend trend--down">▼ 3,2%</span>
+          </div>
+          <div class="card">
+            <p class="kpi__label">Tỉ lệ chuyển đổi</p>
+            <p class="kpi__value">3,8%</p>
+            <span class="trend trend--up">▲ 0,4%</span>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <section class="card">
+            <div class="card__head">
+              <h2>Doanh thu 7 ngày</h2>
+              <span class="badge">Đơn vị: triệu đồng</span>
+            </div>
+            <div class="chart">
+              <div class="chart__bar" style="height:45%"><span>18,2tr</span></div>
+              <div class="chart__bar" style="height:62%"><span>25,1tr</span></div>
+              <div class="chart__bar" style="height:38%"><span>15,4tr</span></div>
+              <div class="chart__bar" style="height:80%"><span>32,6tr</span></div>
+              <div class="chart__bar" style="height:70%"><span>28,3tr</span></div>
+              <div class="chart__bar" style="height:95%"><span>38,9tr</span></div>
+              <div class="chart__bar" style="height:58%"><span>23,7tr</span></div>
+            </div>
+            <div class="chart__labels"><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span></div>
+          </section>
+
+          <section class="card">
+            <div class="card__head"><h2>Doanh thu theo danh mục</h2></div>
+            <ul class="progress-list">
+              <li><div class="row"><span>Nội thất văn phòng</span><strong>58%</strong></div><div class="progress"><span style="width:58%"></span></div></li>
+              <li><div class="row"><span>Phụ kiện bàn làm việc</span><strong>22%</strong></div><div class="progress"><span style="width:22%"></span></div></li>
+              <li><div class="row"><span>Thiết bị công nghệ</span><strong>14%</strong></div><div class="progress"><span style="width:14%"></span></div></li>
+              <li><div class="row"><span>Phong cách sống</span><strong>6%</strong></div><div class="progress"><span style="width:6%"></span></div></li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="grid-2">
+          <section class="card card--flush">
+            <div class="card__head">
+              <h2>Đơn hàng gần đây</h2>
+              <a href="orders.html" class="link-more">Xem tất cả</a>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>Mã đơn</th><th>Khách hàng</th><th class="num">Tổng tiền</th><th>Trạng thái</th></tr></thead>
+                <tbody>
+                <tr>
+                  <td><a href="order-detail.html"><strong>#DF10248</strong></a></td>
+                  <td>Nguyễn Văn An</td>
+                  <td class="num">10.770.000₫</td>
+                  <td><span class="badge badge--warning">Chờ xác nhận</span></td>
+                </tr>
+                <tr>
+                  <td><a href="order-detail.html"><strong>#DF10247</strong></a></td>
+                  <td>Trần Thị Bình</td>
+                  <td class="num">5.290.000₫</td>
+                  <td><span class="badge badge--info">Đang giao</span></td>
+                </tr>
+                <tr>
+                  <td><a href="order-detail.html"><strong>#DF10246</strong></a></td>
+                  <td>Lê Hoàng Cường</td>
+                  <td class="num">890.000₫</td>
+                  <td><span class="badge badge--success">Hoàn thành</span></td>
+                </tr>
+                <tr>
+                  <td><a href="order-detail.html"><strong>#DF10245</strong></a></td>
+                  <td>Phạm Minh Dũng</td>
+                  <td class="num">16.480.000₫</td>
+                  <td><span class="badge badge--success">Hoàn thành</span></td>
+                </tr>
+                <tr>
+                  <td><a href="order-detail.html"><strong>#DF10244</strong></a></td>
+                  <td>Võ Thu Hà</td>
+                  <td class="num">390.000₫</td>
+                  <td><span class="badge badge--danger">Đã huỷ</span></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="card">
+            <div class="card__head"><h2>Bán chạy nhất</h2></div>
+            <ul class="stack">
+              <li class="cell-product"><img src="https://picsum.photos/seed/p1a/100/100" alt="" /><div><strong>Nomad Pro – ND01</strong><small>86 đã bán</small></div></li>
+              <li class="cell-product"><img src="https://picsum.photos/seed/p3a/100/100" alt="" /><div><strong>Ghế Breeze – CH05</strong><small>64 đã bán</small></div></li>
+              <li class="cell-product"><img src="https://picsum.photos/seed/p4a/100/100" alt="" /><div><strong>Kê màn hình Cloud – MR02</strong><small>51 đã bán</small></div></li>
+              <li class="cell-product"><img src="https://picsum.photos/seed/p6a/100/100" alt="" /><div><strong>Cốc Warmly – TC01</strong><small>40 đã bán</small></div></li>
+            </ul>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>

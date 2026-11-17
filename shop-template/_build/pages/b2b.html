@@ -1,0 +1,96 @@
+---
+title: Giải pháp cho doanh nghiệp – DeskFlow
+description: Trang bị văn phòng công thái học trọn gói cho doanh nghiệp – tư vấn, báo giá, lắp đặt và bảo hành tại chỗ.
+nav: b2b
+css: content, home
+---
+    <section class="section" style="padding-top:24px">
+      <div class="container">
+        <div class="b2b-hero">
+          <img src="https://picsum.photos/seed/b2bhero/1600/700" alt="" />
+          <div class="b2b-hero__body">
+            <span class="slide__eyebrow">DeskFlow Business</span>
+            <h1>Văn phòng công thái học cho đội ngũ của bạn</h1>
+            <p>Từ 10 đến 1.000 chỗ ngồi: tư vấn bố trí, chiết khấu theo số lượng, lắp đặt ngoài giờ và bảo hành tại chỗ.</p>
+            <a href="#bao-gia" class="btn btn--accent" style="align-self:flex-start">Nhận báo giá trong 24h</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface">
+      <div class="container">
+        <div class="section__head"><h2 class="section__title">Vì sao doanh nghiệp chọn DeskFlow</h2></div>
+        <div class="features">
+          <div class="feature"><div class="feature__icon">💰</div><h3>Chiết khấu đến 25%</h3><p>Theo số lượng và hợp đồng dài hạn</p></div>
+          <div class="feature"><div class="feature__icon">📐</div><h3>Tư vấn layout</h3><p>Bản vẽ bố trí văn phòng miễn phí</p></div>
+          <div class="feature"><div class="feature__icon">🌙</div><h3>Lắp đặt ngoài giờ</h3><p>Không gián đoạn công việc</p></div>
+          <div class="feature"><div class="feature__icon">🛡️</div><h3>Bảo hành tại chỗ</h3><p>Kỹ thuật viên có mặt trong 24h</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head"><h2 class="section__title">Quy trình hợp tác</h2></div>
+        <ol class="process">
+          <li><h3>Khảo sát</h3><p>Trao đổi nhu cầu, khảo sát mặt bằng văn phòng.</p></li>
+          <li><h3>Đề xuất</h3><p>Gửi layout, mẫu sản phẩm và báo giá chi tiết.</p></li>
+          <li><h3>Triển khai</h3><p>Giao hàng, lắp đặt và nghiệm thu theo tiến độ.</p></li>
+          <li><h3>Hậu mãi</h3><p>Bảo hành, bảo dưỡng định kỳ và mở rộng khi cần.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--surface">
+      <div class="container">
+        <div class="section__head"><h2 class="section__title">Khách hàng doanh nghiệp tiêu biểu</h2></div>
+      </div>
+      <div class="marquee">
+        <div class="marquee__track">
+          <span class="partner-logo">Startup A</span>
+          <span class="partner-logo">Tech Corp B</span>
+          <span class="partner-logo">Agency C</span>
+          <span class="partner-logo">Bank D</span>
+          <span class="partner-logo">Studio E</span>
+          <span class="partner-logo">Edu F</span>
+          <span class="partner-logo" aria-hidden="true">Startup A</span>
+          <span class="partner-logo" aria-hidden="true">Tech Corp B</span>
+          <span class="partner-logo" aria-hidden="true">Agency C</span>
+          <span class="partner-logo" aria-hidden="true">Bank D</span>
+          <span class="partner-logo" aria-hidden="true">Studio E</span>
+          <span class="partner-logo" aria-hidden="true">Edu F</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bao-gia">
+      <div class="container">
+        <form class="box quote-form" action="contact.html" method="get">
+          <h2>Yêu cầu báo giá</h2>
+          <div class="form-row">
+            <div class="field"><label for="bq-company">Tên công ty *</label><input id="bq-company" class="input" name="company" required /></div>
+            <div class="field"><label for="bq-tax">Mã số thuế</label><input id="bq-tax" class="input" name="tax_code" pattern="[0-9]{10}([0-9]{3})?" title="10 hoặc 13 chữ số" /></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="bq-name">Người liên hệ *</label><input id="bq-name" class="input" name="name" required /></div>
+            <div class="field"><label for="bq-phone">Số điện thoại *</label><input id="bq-phone" class="input" type="tel" name="phone" required pattern="0[0-9]{9}" /></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="bq-email">Email công việc *</label><input id="bq-email" class="input" type="email" name="email" required /></div>
+            <div class="field">
+              <label for="bq-seats">Số chỗ ngồi *</label>
+              <select id="bq-seats" class="select" name="seats" required>
+                <option value="">Chọn quy mô</option>
+                <option>10 – 30</option>
+                <option>31 – 100</option>
+                <option>101 – 500</option>
+                <option>Trên 500</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="bq-note">Nhu cầu cụ thể</label><textarea id="bq-note" class="textarea" name="note" placeholder="Ví dụ: 40 bàn nâng hạ, 40 ghế, lắp đặt trước 15/12"></textarea></div>
+          <button type="submit" class="btn btn--accent">Gửi yêu cầu báo giá</button>
+        </form>
+      </div>
+    </section>

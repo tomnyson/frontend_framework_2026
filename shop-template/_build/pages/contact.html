@@ -1,0 +1,59 @@
+---
+title: Liên hệ – DeskFlow
+description: Liên hệ DeskFlow – hotline, email, showroom và form gửi yêu cầu hỗ trợ.
+nav: none
+css: content
+---
+    <section class="page-hero">
+      <div class="container">
+        <h1>Liên hệ với chúng tôi</h1>
+        <p>Đội ngũ DeskFlow phản hồi trong vòng 2 giờ làm việc (8:00 – 21:00, kể cả cuối tuần).</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact">
+        <form class="box" action="contact.html" method="get">
+          <h2>Gửi yêu cầu</h2>
+          <div class="form-row">
+            <div class="field"><label for="ct-name">Họ và tên *</label><input id="ct-name" class="input" name="name" required minlength="2" /></div>
+            <div class="field"><label for="ct-phone">Số điện thoại *</label><input id="ct-phone" class="input" type="tel" name="phone" required pattern="0[0-9]{9}" /></div>
+          </div>
+          <div class="field"><label for="ct-email">Email</label><input id="ct-email" class="input" type="email" name="email" /></div>
+          <div class="field">
+            <label for="ct-topic">Chủ đề *</label>
+            <select id="ct-topic" class="select" name="topic" required>
+              <option value="">Chọn chủ đề</option>
+              <option>Tư vấn sản phẩm</option>
+              <option>Đơn hàng &amp; giao hàng</option>
+              <option>Bảo hành &amp; sửa chữa</option>
+              <option>Hợp tác kinh doanh</option>
+              <option>Khác</option>
+            </select>
+          </div>
+          <div class="field"><label for="ct-msg">Nội dung *</label><textarea id="ct-msg" class="textarea" name="message" required minlength="10"></textarea></div>
+          <button type="submit" class="btn">Gửi yêu cầu</button>
+        </form>
+
+        <div>
+          <ul class="contact-list">
+            <li>📞<div><strong>Hotline</strong><small>1900 0000 (8:00 – 21:00)</small></div></li>
+            <li>✉️<div><strong>Email</strong><small>hello@deskflow.example</small></div></li>
+            <li>💬<div><strong>Zalo OA / Messenger</strong><small>DeskFlow Việt Nam (mẫu)</small></div></li>
+            <li>🏢<div><strong>Trụ sở</strong><small>123 Đường Mẫu, Phường Sài Gòn, TP. Hồ Chí Minh</small></div></li>
+          </ul>
+          <img class="map" src="https://picsum.photos/seed/citymap/1000/560" alt="Bản đồ vị trí (ảnh minh hoạ)" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface">
+      <div class="container">
+        <div class="section__head"><h2 class="section__title">Hệ thống showroom</h2></div>
+        <div class="branches">
+          <div class="box"><h3>TP. Hồ Chí Minh</h3><p>123 Đường Mẫu, Phường Sài Gòn<br />8:30 – 21:00 hằng ngày</p></div>
+          <div class="box"><h3>Hà Nội</h3><p>45 Phố Mẫu, Phường Hoàn Kiếm<br />8:30 – 21:00 hằng ngày</p></div>
+          <div class="box"><h3>Đà Nẵng</h3><p>67 Đường Mẫu, Phường Hải Châu<br />9:00 – 20:00 hằng ngày</p></div>
+        </div>
+      </div>
+    </section>

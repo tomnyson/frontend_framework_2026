@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danh mục – DeskFlow Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body>
+  <div class="admin">
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" aria-label="Mở menu" />
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <a href="index.html" class="logo">Desk<span>Flow</span><small>Admin Panel</small></a>
+      <p class="sidebar__group">Tổng quan</p>
+      <a href="index.html" class="sidebar__link"><span>📊</span> Dashboard</a>
+      <p class="sidebar__group">Bán hàng</p>
+      <a href="orders.html" class="sidebar__link"><span>🧾</span> Đơn hàng<span class="count">12</span></a>
+      <a href="customers.html" class="sidebar__link"><span>👥</span> Khách hàng</a>
+      <p class="sidebar__group">Danh mục</p>
+      <a href="products.html" class="sidebar__link"><span>📦</span> Sản phẩm</a>
+      <a href="categories.html" class="sidebar__link is-active"><span>🗂️</span> Danh mục</a>
+      <div class="sidebar__foot">
+        <a href="../index.html" class="sidebar__link"><span>🌐</span> Xem website</a>
+        <a href="login.html" class="sidebar__link"><span>🚪</span> Đăng xuất</a>
+      </div>
+    </aside>
+
+    <div class="main">
+      <!-- ===== TOPBAR ===== -->
+      <header class="admin-topbar">
+        <label for="sidebar-toggle" class="action-btn sidebar-btn" aria-label="Menu">☰</label>
+        <input class="input search" type="search" placeholder="Tìm đơn hàng, sản phẩm, khách hàng..." />
+        <div class="admin-topbar__right">
+          <a href="orders.html" class="action-btn" aria-label="Thông báo">🔔</a>
+          <div class="user-chip">
+            <span class="avatar">QA</span>
+            <span>Quản trị viên<small>admin@deskflow.example</small></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="page-head">
+          <div>
+            <h1>Danh mục</h1>
+            <p class="breadcrumb"><a href="index.html">Dashboard</a> / Danh mục</p>
+          </div>
+          <a href="#cat-form" class="btn">+ Thêm danh mục</a>
+        </div>
+
+        <section class="card card--flush">
+          <div class="toolbar">
+            <input class="input" type="search" placeholder="Tìm danh mục..." />
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Tên danh mục</th><th>Slug</th><th>Danh mục cha</th><th class="num">Sản phẩm</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>🪑 <strong>Nội thất văn phòng</strong></td>
+                  <td>noi-that-van-phong</td>
+                  <td>—</td>
+                  <td class="num">18</td>
+                  <td><span class="status status--on">Hiển thị</span></td>
+                  <td><div class="actions"><a href="#cat-form" class="action-btn" aria-label="Sửa">✏️</a><a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a></div></td>
+                </tr>
+                <tr>
+                  <td> <strong>↳ Bàn làm việc</strong></td>
+                  <td>ban-lam-viec</td>
+                  <td>Nội thất văn phòng</td>
+                  <td class="num">8</td>
+                  <td><span class="status status--on">Hiển thị</span></td>
+                  <td><div class="actions"><a href="#cat-form" class="action-btn" aria-label="Sửa">✏️</a><a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a></div></td>
+                </tr>
+                <tr>
+                  <td> <strong>↳ Ghế văn phòng</strong></td>
+                  <td>ghe-van-phong</td>
+                  <td>Nội thất văn phòng</td>
+                  <td class="num">6</td>
+                  <td><span class="status status--on">Hiển thị</span></td>
+                  <td><div class="actions"><a href="#cat-form" class="action-btn" aria-label="Sửa">✏️</a><a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a></div></td>
+                </tr>
+                <tr>
+                  <td> <strong>↳ Lưu trữ</strong></td>
+                  <td>luu-tru</td>
+                  <td>Nội thất văn phòng</td>
+                  <td class="num">4</td>
+                  <td><span class="status status--on">Hiển thị</span></td>
+                  <td><div class="actions"><a href="#cat-form" class="action-btn" aria-label="Sửa">✏️</a><a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a></div></td>
+                </tr>
+                <tr>
+                  <td>🖥️ <strong>Phụ kiện bàn làm việc</strong></td>
+                  <td>phu-kien-ban-lam-viec</td>
+                  <td>—</td>
+                  <td class="num">15</td>
+                  <td><span class="status status--on">Hiển thị</span></td>
+                  <td><div class="actions"><a href="#cat-form" class="action-btn" aria-label="Sửa">✏️</a><a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a></div></td>
+                </tr>
+                <tr>
+                  <td>⌨️ <strong>Thiết bị công nghệ</strong></td>
+                  <td>thiet-bi-cong-nghe</td>
+                  <td>—</td>
+                  <td class="num">9</td>
+                  <td><span class="status status--on">Hiển thị</span></td>
+                  <td><div class="actions"><a href="#cat-form" class="action-btn" aria-label="Sửa">✏️</a><a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a></div></td>
+                </tr>
+                <tr>
+                  <td>☕ <strong>Phong cách sống</strong></td>
+                  <td>phong-cach-song</td>
+                  <td>—</td>
+                  <td class="num">6</td>
+                  <td><span class="status status--off">Ẩn</span></td>
+                  <td><div class="actions"><a href="#cat-form" class="action-btn" aria-label="Sửa">✏️</a><a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- ===== CONFIRM DELETE (:target) ===== -->
+  <div class="overlay" id="confirm-delete" role="dialog" aria-label="Xác nhận xoá">
+    <a href="#" class="overlay__close-area" aria-label="Đóng"></a>
+    <div class="admin-modal">
+      <h3>Xoá danh mục?</h3>
+      <p>Hành động này không thể hoàn tác. Bạn có chắc chắn muốn xoá?</p>
+      <div class="admin-modal__actions">
+        <a href="#" class="btn btn--outline">Huỷ</a>
+        <a href="#" class="btn btn--danger">Xoá</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CATEGORY FORM (:target) ===== -->
+  <div class="overlay" id="cat-form" role="dialog" aria-label="Danh mục">
+    <a href="#" class="overlay__close-area" aria-label="Đóng"></a>
+    <form class="admin-modal" action="#" method="get">
+      <h3>Thêm / sửa danh mục</h3>
+      <p>Điền thông tin danh mục sản phẩm.</p>
+      <div class="field">
+        <label for="cat-name">Tên danh mục *</label>
+        <input id="cat-name" class="input" name="name" required minlength="2" />
+      </div>
+      <div class="field">
+        <label for="cat-slug">Slug</label>
+        <input id="cat-slug" class="input" name="slug" placeholder="tu-dong-tao-tu-ten" />
+      </div>
+      <div class="field">
+        <label for="cat-parent">Danh mục cha</label>
+        <select id="cat-parent" class="select" name="parent">
+          <option value="">— Không có —</option>
+          <option>Nội thất văn phòng</option>
+          <option>Phụ kiện bàn làm việc</option>
+          <option>Thiết bị công nghệ</option>
+          <option>Phong cách sống</option>
+        </select>
+      </div>
+      <div class="field">
+        <label><input type="checkbox" name="active" checked /> Hiển thị trên website</label>
+      </div>
+      <div class="admin-modal__actions">
+        <a href="#" class="btn btn--outline">Huỷ</a>
+        <button type="submit" class="btn">Lưu</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

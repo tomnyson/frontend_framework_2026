@@ -1,0 +1,117 @@
+---
+title: Giỏ hàng – DeskFlow
+description: Giỏ hàng của bạn tại DeskFlow.
+nav: none
+css: checkout
+---
+    <div class="container cart-page">
+      {{breadcrumb:Trang chủ>index.html|Giỏ hàng}}
+
+      <!-- ===== EMPTY STATE (demo via :target) ===== -->
+      <section class="cart-empty" id="cart-empty">
+        <div class="cart-empty__icon">🛒</div>
+        <h2>Giỏ hàng của bạn đang trống</h2>
+        <p>Khám phá sản phẩm và thêm vào giỏ để bắt đầu mua sắm.</p>
+        <a href="collection.html" class="btn">Tiếp tục mua sắm</a>
+        <p style="margin-top:16px"><a href="cart.html" class="link-more">← Xem giỏ có sản phẩm (demo)</a></p>
+      </section>
+
+      <!-- ===== FILLED STATE ===== -->
+      <div class="cart-filled">
+        <div class="section__head">
+          <h1 class="section__title">Giỏ hàng (3 sản phẩm)</h1>
+          <a href="#cart-empty" class="link-more">Xem trạng thái giỏ trống (demo)</a>
+        </div>
+
+        <div class="cart-layout">
+          <div>
+            <p class="notice">🎉 Bạn được <strong>miễn phí vận chuyển</strong> cho đơn hàng này.</p>
+            <table class="cart-table">
+              <thead>
+                <tr><th>Sản phẩm</th><th>Số lượng</th><th class="num">Thành tiền</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="cart-product">
+                      <img src="https://picsum.photos/seed/p1a/200/200" alt="" />
+                      <div>
+                        <a href="product.html"><strong>Bàn nâng hạ Nomad Pro – ND01</strong></a>
+                        <small>Gỗ sồi · 140 × 70 · Khung đen</small>
+                        <small>9.490.000₫</small>
+                        <button type="button" class="remove">Xoá</button>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="qty"><button type="button">−</button><span>1</span><button type="button">+</button></div></td>
+                  <td class="num"><strong>9.490.000₫</strong></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="cart-product">
+                      <img src="https://picsum.photos/seed/p4a/200/200" alt="" />
+                      <div>
+                        <a href="product.html"><strong>Kê màn hình 2 tầng Cloud – MR02</strong></a>
+                        <small>Màu trắng</small>
+                        <small>890.000₫</small>
+                        <button type="button" class="remove">Xoá</button>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="qty"><button type="button">−</button><span>2</span><button type="button">+</button></div></td>
+                  <td class="num"><strong>1.780.000₫</strong></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="cart-product">
+                      <img src="https://picsum.photos/seed/p8a/200/200" alt="" />
+                      <div>
+                        <a href="product.html"><strong>Khay quản lý dây cáp Tidy – AC03</strong></a>
+                        <small>Màu đen</small>
+                        <small>250.000₫</small>
+                        <button type="button" class="remove">Xoá</button>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="qty"><button type="button">−</button><span>1</span><button type="button">+</button></div></td>
+                  <td class="num"><strong>250.000₫</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="field" style="margin-top:24px">
+              <label for="cart-note">Ghi chú đơn hàng</label>
+              <textarea id="cart-note" class="textarea" name="note" placeholder="Ví dụ: giao giờ hành chính, gọi trước khi đến"></textarea>
+            </div>
+            <a href="collection.html" class="link-more">← Tiếp tục mua sắm</a>
+          </div>
+
+          <aside class="box summary">
+            <h2>Tóm tắt đơn hàng</h2>
+            <form class="coupon" action="cart.html" method="get">
+              <label for="coupon" class="visually-hidden">Mã giảm giá</label>
+              <input id="coupon" class="input" name="coupon" placeholder="Mã giảm giá" pattern="[A-Za-z0-9]{4,12}" />
+              <button type="submit" class="btn btn--outline">Áp dụng</button>
+            </form>
+            <div class="summary-row"><span>Tạm tính</span><span>11.520.000₫</span></div>
+            <div class="summary-row"><span>Giảm giá (DESK10)</span><span style="color:var(--color-success)">−500.000₫</span></div>
+            <div class="summary-row"><span>Phí vận chuyển</span><span>Miễn phí</span></div>
+            <hr />
+            <div class="summary-row summary-row--total"><span>Tổng cộng</span><span>11.020.000₫</span></div>
+            <p class="section__sub" style="font-size:13px;margin-bottom:16px">Đã bao gồm VAT. Tích lũy 1.102 điểm thưởng.</p>
+            <a href="checkout.html" class="btn btn--accent btn--block">Tiến hành thanh toán</a>
+            <p class="section__sub" style="font-size:13px;margin-top:12px;text-align:center">Visa · Mastercard · QR Banking · COD</p>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Có thể bạn cũng thích</h2>
+        </div>
+        <div class="slider product-row">
+{{cards:5-11}}
+        </div>
+      </div>
+    </section>

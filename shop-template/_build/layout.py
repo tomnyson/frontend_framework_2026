@@ -1,0 +1,309 @@
+"""Shared storefront layout (head, header, footer, cart drawer, chat) and card renderers."""
+
+from data import BADGE_LABELS, POSTS, PRODUCTS
+
+FONT_URL = (
+    "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+)
+
+NAV_ITEMS = (
+    ("rewards", "rewards.html", "Tích điểm"),
+    ("warranty", "policy.html#bao-hanh", "Bảo hành"),
+    ("b2b", "b2b.html", "Hợp tác"),
+    ("blog", "blog.html", "Tin tức"),
+)
+
+
+def _active(key: str, current: str) -> str:
+    return ' class="is-active"' if key == current else ""
+
+
+def head(title: str, description: str, css: tuple[str, ...]) -> str:
+    links = "\n".join(f'  <link rel="stylesheet" href="assets/css/{name}.css" />' for name in css)
+    return f"""<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content="{description}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="{FONT_URL}" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/web.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+{links}
+</head>
+<body>
+"""
+
+
+def header(current: str) -> str:
+    extra_nav = "\n".join(
+        f'        <li><a href="{href}"{_active(key, current)}>{label}</a></li>'
+        for key, href, label in NAV_ITEMS
+    )
+    return f"""
+  <!-- ===== TOPBAR ===== -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <ul class="topbar__links">
+        <li>🚚 Giao nhanh 2h nội thành HN &amp; HCM</li>
+      </ul>
+      <ul class="topbar__links topbar__links--right">
+        <li><a href="#">Tiếng Việt</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="contact.html">Hotline: 1900 0000</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Mở menu" />
+      <label for="menu-toggle" class="icon-btn menu-btn" aria-hidden="true">☰</label>
+
+      <a href="index.html" class="logo">Desk<span>Flow</span></a>
+
+      <ul class="nav">
+        <li class="has-mega">
+          <a href="collection.html"{_active("products", current)}>Sản phẩm ▾</a>
+          <div class="mega">
+            <div>
+              <h4>Nội thất văn phòng</h4>
+              <ul>
+                <li><a href="collection.html">Bàn làm việc</a></li>
+                <li><a href="collection.html">Ghế văn phòng</a></li>
+                <li><a href="collection.html">Lưu trữ</a></li>
+                <li><a href="collection.html">Giá treo TV</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Phụ kiện bàn làm việc</h4>
+              <ul>
+                <li><a href="collection.html">Giải pháp màn hình</a></li>
+                <li><a href="collection.html">Quản lý dây cáp</a></li>
+                <li><a href="collection.html">Kê chân, kê tay</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Thiết bị công nghệ</h4>
+              <ul>
+                <li><a href="collection.html">Bàn phím &amp; chuột</a></li>
+                <li><a href="collection.html">Đèn chiếu sáng</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Phong cách sống</h4>
+              <ul>
+                <li><a href="collection.html">Ví điện thoại</a></li>
+                <li><a href="collection.html">Cốc giữ nhiệt</a></li>
+              </ul>
+            </div>
+            <a href="b2b.html" class="mega__promo">
+              <img src="https://picsum.photos/seed/desksetup/600/375" alt="Thiết kế góc làm việc" loading="lazy" />
+              <p>Tự thiết kế góc làm việc của bạn →</p>
+            </a>
+          </div>
+        </li>
+{extra_nav}
+      </ul>
+
+      <div class="header__actions">
+        <a href="search.html" class="icon-btn" aria-label="Tìm kiếm">🔍</a>
+        <a href="wishlist.html" class="icon-btn hide-sm" aria-label="Yêu thích">♡</a>
+        <a href="login.html" class="icon-btn" aria-label="Tài khoản">👤</a>
+        <a href="#cart" class="icon-btn" aria-label="Giỏ hàng">🛒<span class="cart-count">2</span></a>
+      </div>
+    </div>
+  </header>
+"""
+
+
+FOOTER = """
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__info">
+          <a href="index.html" class="logo">Desk<span>Flow</span></a>
+          <p>Công ty TNHH DeskFlow Việt Nam (dữ liệu mẫu)</p>
+          <p>📍 123 Đường Mẫu, Phường Sài Gòn, TP.HCM</p>
+          <p>📞 1900 0000 · ✉️ hello@deskflow.example</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="YouTube">▶</a>
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="TikTok">♪</a>
+          </div>
+        </div>
+        <div>
+          <h4>Hợp tác</h4>
+          <ul>
+            <li><a href="b2b.html">Giải pháp doanh nghiệp</a></li>
+            <li><a href="b2b.html#bao-gia">Nhận báo giá</a></li>
+            <li><a href="contact.html">Hợp tác Media</a></li>
+            <li><a href="contact.html">Đại lý</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Hỗ trợ</h4>
+          <ul>
+            <li><a href="contact.html">Liên hệ</a></li>
+            <li><a href="policy.html#bao-hanh">Chính sách bảo hành</a></li>
+            <li><a href="policy.html#giao-hang">Chính sách giao hàng</a></li>
+            <li><a href="policy.html#doi-tra">Chính sách đổi trả</a></li>
+            <li><a href="policy.html#bao-mat">Chính sách bảo mật</a></li>
+            <li><a href="policy.html#dieu-khoan">Điều khoản sử dụng</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Tài khoản</h4>
+          <ul>
+            <li><a href="login.html">Đăng nhập / Đăng ký</a></li>
+            <li><a href="account.html">Tài khoản của tôi</a></li>
+            <li><a href="account-order.html">Tra cứu đơn hàng</a></li>
+            <li><a href="wishlist.html">Sản phẩm yêu thích</a></li>
+            <li><a href="rewards.html">Tích điểm thành viên</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Khám phá</h4>
+          <ul>
+            <li><a href="about.html">Về chúng tôi</a></li>
+            <li><a href="blog.html">Tin tức</a></li>
+            <li><a href="collection.html">Tất cả sản phẩm</a></li>
+            <li><a href="admin/login.html">Trang quản trị</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 DeskFlow. Template demo cho mục đích học tập.</span>
+        <span>Visa · Mastercard · QR Banking · COD</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING CHAT ===== -->
+  <details class="chat">
+    <summary aria-label="Liên hệ nhanh">💬</summary>
+    <ul>
+      <li><a href="contact.html">💻 Chat trên web</a></li>
+      <li><a href="#">🟦 Zalo</a></li>
+      <li><a href="#">💙 Messenger</a></li>
+    </ul>
+  </details>
+
+  <!-- ===== CART DRAWER (:target) ===== -->
+  <div class="overlay" id="cart" role="dialog" aria-label="Giỏ hàng">
+    <a href="#" class="overlay__close-area" aria-label="Đóng"></a>
+    <aside class="drawer">
+      <div class="drawer__head">
+        <h3>Giỏ hàng (2)</h3>
+        <a href="#" class="icon-btn" aria-label="Đóng giỏ hàng">✕</a>
+      </div>
+      <div class="drawer__body">
+        <div class="cart-item">
+          <img src="https://picsum.photos/seed/p1a/200/200" alt="" />
+          <div>
+            <h4>Bàn nâng hạ Nomad Pro – ND01</h4>
+            <small>Mặt gỗ sồi · 140x70cm</small>
+            <div class="qty"><button type="button">−</button><span>1</span><button type="button">+</button></div>
+          </div>
+          <div>
+            <strong>8.990.000₫</strong><br />
+            <button type="button" class="remove">Xoá</button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="https://picsum.photos/seed/p4a/200/200" alt="" />
+          <div>
+            <h4>Kê màn hình 2 tầng Cloud – MR02</h4>
+            <small>Màu trắng</small>
+            <div class="qty"><button type="button">−</button><span>2</span><button type="button">+</button></div>
+          </div>
+          <div>
+            <strong>1.780.000₫</strong><br />
+            <button type="button" class="remove">Xoá</button>
+          </div>
+        </div>
+      </div>
+      <div class="drawer__foot">
+        <div class="summary-row"><span>Tạm tính</span><span>10.770.000₫</span></div>
+        <div class="summary-row"><span>Phí vận chuyển</span><span>Miễn phí</span></div>
+        <div class="summary-row summary-row--total"><span>Tổng cộng</span><span>10.770.000₫</span></div>
+        <a href="checkout.html" class="btn btn--accent btn--block">Thanh toán</a>
+        <p class="drawer__links"><a href="cart.html" class="link-more">Xem giỏ hàng</a> · <a href="#" class="link-more">Tiếp tục mua sắm</a></p>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>
+"""
+
+
+def product_card(product: dict) -> str:
+    pid = product["id"]
+    soldout = "soldout" in product["badges"]
+    badges = "".join(
+        f'<span class="badge {BADGE_LABELS[b][0]}">{BADGE_LABELS[b][1]}</span>' for b in product["badges"]
+    )
+    badge_html = f'\n              <div class="product__badges">{badges}</div>' if badges else ""
+    price_prefix = "Từ " if product["from"] else ""
+    compare = f'<span class="price__regular">{product["compare"]}</span>' if product["compare"] else ""
+    action = (
+        '<span class="btn btn--outline btn--sm btn--block" aria-disabled="true">Tạm hết hàng</span>'
+        if soldout
+        else '<a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>'
+    )
+    title = f'{product["name"]} – {product["sku"]}'
+    return f"""          <article class="product{' product--soldout' if soldout else ''}">
+            <a href="product.html" class="product__media">{badge_html}
+              <img src="https://picsum.photos/seed/{pid}a/600/600" alt="{product['name']}" loading="lazy" />
+              <img src="https://picsum.photos/seed/{pid}b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">{product['cat']}</span>
+            <h3 class="product__name"><a href="product.html">{title}</a></h3>
+            <div class="price">
+              <span class="price__sale">{price_prefix}{product['price']}</span>
+              {compare}
+            </div>
+            {action}
+          </article>"""
+
+
+def post_card(post: dict) -> str:
+    return f"""          <article class="post">
+            <a href="blog-post.html"><img src="https://picsum.photos/seed/{post['id']}/800/500" alt="" loading="lazy" /></a>
+            <time datetime="{post['date']}">{post['label']} · {post['tag']}</time>
+            <h3><a href="blog-post.html">{post['title']}</a></h3>
+            <p>{post['excerpt']}</p>
+          </article>"""
+
+
+def _slice(spec: str, items: tuple) -> tuple:
+    start, end = (int(x) for x in spec.split("-"))
+    return items[start:end]
+
+
+def render_cards(spec: str) -> str:
+    return "\n".join(product_card(p) for p in _slice(spec, PRODUCTS))
+
+
+def render_posts(spec: str) -> str:
+    return "\n".join(post_card(p) for p in _slice(spec, POSTS))
+
+
+def render_breadcrumb(spec: str) -> str:
+    """'Trang chủ>index.html|Sản phẩm>collection.html|Bàn nâng hạ' -> breadcrumb nav."""
+    parts = []
+    for crumb in spec.split("|"):
+        if ">" in crumb:
+            label, href = crumb.split(">", 1)
+            parts.append(f'<a href="{href}">{label}</a>')
+        else:
+            parts.append(f'<span aria-current="page">{crumb}</span>')
+    return f'<nav class="crumbs" aria-label="Breadcrumb">{" / ".join(parts)}</nav>'

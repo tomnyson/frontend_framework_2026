@@ -1,0 +1,458 @@
+/* Customer pages: login/register, account, order tracking, wishlist, rewards */
+
+/* ===== Auth ===== */
+.auth {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 640px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.auth__art {
+  position: relative;
+  background: #111;
+  color: #fff;
+}
+
+.auth__art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.auth__art div {
+  position: absolute;
+  left: var(--space-6);
+  right: var(--space-6);
+  bottom: var(--space-6);
+}
+
+.auth__art h2 {
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.auth__box {
+  padding: var(--space-7) var(--space-6);
+}
+
+.auth__box > input {
+  position: absolute;
+  opacity: 0;
+}
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: var(--space-5);
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--color-surface);
+}
+
+.auth-tabs label {
+  padding: 10px;
+  border-radius: 999px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+.auth__box:has(#tab-login:checked) label[for="tab-login"],
+.auth__box:has(#tab-register:checked) label[for="tab-register"] {
+  background: #fff;
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+}
+
+.auth-form--register,
+.auth__box:has(#tab-register:checked) .auth-form--login {
+  display: none;
+}
+
+.auth__box:has(#tab-register:checked) .auth-form--register {
+  display: block;
+}
+
+.auth-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  font-size: 14px;
+}
+
+.auth-row label {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-5) 0;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.social-login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+/* ===== Account layout (radio + :has panels) ===== */
+.account {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.account > * {
+  min-width: 0;
+}
+
+.account > input {
+  position: absolute;
+  opacity: 0;
+}
+
+.account-nav {
+  position: sticky;
+  top: 90px;
+}
+
+.account-user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.account-user small {
+  display: block;
+  color: var(--color-muted);
+}
+
+.avatar-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+.account-nav label,
+.account-nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.account-nav label:hover,
+.account-nav a:hover {
+  background: var(--color-surface);
+}
+
+.account:has(#acc-overview:checked) label[for="acc-overview"],
+.account:has(#acc-orders:checked) label[for="acc-orders"],
+.account:has(#acc-address:checked) label[for="acc-address"],
+.account:has(#acc-profile:checked) label[for="acc-profile"] {
+  background: var(--color-text);
+  color: #fff;
+}
+
+.panel {
+  display: none;
+}
+
+.account:has(#acc-overview:checked) .panel--overview,
+.account:has(#acc-orders:checked) .panel--orders,
+.account:has(#acc-address:checked) .panel--address,
+.account:has(#acc-profile:checked) .panel--profile {
+  display: block;
+}
+
+.panel h1 {
+  margin-bottom: var(--space-5);
+  font-size: 26px;
+}
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.stat-cards strong {
+  display: block;
+  font-size: 26px;
+}
+
+.stat-cards span {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.order-table th,
+.order-table td {
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.order-table th {
+  font-size: 12px;
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+.address-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.address-card p {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.address-card .chips {
+  margin-top: var(--space-3);
+}
+
+/* ===== Order tracking ===== */
+.track-form {
+  display: flex;
+  gap: var(--space-2);
+  max-width: 560px;
+}
+
+.order-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.order-grid > * {
+  min-width: 0;
+}
+
+.order-grid .box + .box {
+  margin-top: var(--space-4);
+}
+
+/* ===== Wishlist ===== */
+.wish {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.wish .product {
+  flex: 1;
+}
+
+.wish__remove {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== Rewards ===== */
+.points-hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #1b1b1b, #3a2a1f);
+  color: #fff;
+}
+
+.points-hero h1 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.points-hero p {
+  opacity: 0.8;
+}
+
+.points-card {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.points-card strong {
+  display: block;
+  font-size: 40px;
+  color: #ffc078;
+}
+
+.progress-line {
+  height: 8px;
+  margin: var(--space-3) 0 var(--space-1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.progress-line span {
+  display: block;
+  height: 100%;
+  background: #ffc078;
+}
+
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.tier {
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.tier.is-current {
+  border-color: var(--color-accent);
+  box-shadow: inset 0 0 0 1px var(--color-accent);
+}
+
+.tier h3 {
+  font-size: 18px;
+}
+
+.tier small {
+  color: var(--color-muted);
+}
+
+.tier ul {
+  margin-top: var(--space-3);
+  font-size: 14px;
+}
+
+.tier li {
+  padding: 4px 0;
+}
+
+.tier li::before {
+  content: "✓ ";
+  color: var(--color-success);
+}
+
+.earn-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.earn-grid div {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: #fff;
+}
+
+.earn-grid b {
+  display: block;
+  font-size: 32px;
+}
+
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.gift img {
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.gift h3 {
+  margin: var(--space-2) 0 var(--space-1);
+  font-size: 15px;
+}
+
+.gift p {
+  margin-bottom: var(--space-2);
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .tiers,
+  .earn-grid,
+  .gift-grid { grid-template-columns: repeat(2, 1fr); }
+  .order-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .auth { grid-template-columns: 1fr; min-height: 0; }
+  .auth__art { display: none; }
+  .account { grid-template-columns: 1fr; }
+  .account-nav { position: static; }
+  .account-nav nav { display: flex; overflow-x: auto; gap: var(--space-1); }
+  .account-nav label,
+  .account-nav a { white-space: nowrap; }
+  .points-hero { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .auth__box { padding: var(--space-5) var(--space-4); }
+  .stat-cards { grid-template-columns: 1fr; }
+  .address-grid { grid-template-columns: 1fr; }
+  .track-form { flex-direction: column; }
+  .points-hero { padding: var(--space-5); }
+  .points-hero h1 { font-size: 24px; }
+}

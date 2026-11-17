@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sản phẩm – DeskFlow Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body>
+  <div class="admin">
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" aria-label="Mở menu" />
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <a href="index.html" class="logo">Desk<span>Flow</span><small>Admin Panel</small></a>
+      <p class="sidebar__group">Tổng quan</p>
+      <a href="index.html" class="sidebar__link"><span>📊</span> Dashboard</a>
+      <p class="sidebar__group">Bán hàng</p>
+      <a href="orders.html" class="sidebar__link"><span>🧾</span> Đơn hàng<span class="count">12</span></a>
+      <a href="customers.html" class="sidebar__link"><span>👥</span> Khách hàng</a>
+      <p class="sidebar__group">Danh mục</p>
+      <a href="products.html" class="sidebar__link is-active"><span>📦</span> Sản phẩm</a>
+      <a href="categories.html" class="sidebar__link"><span>🗂️</span> Danh mục</a>
+      <div class="sidebar__foot">
+        <a href="../index.html" class="sidebar__link"><span>🌐</span> Xem website</a>
+        <a href="login.html" class="sidebar__link"><span>🚪</span> Đăng xuất</a>
+      </div>
+    </aside>
+
+    <div class="main">
+      <!-- ===== TOPBAR ===== -->
+      <header class="admin-topbar">
+        <label for="sidebar-toggle" class="action-btn sidebar-btn" aria-label="Menu">☰</label>
+        <input class="input search" type="search" placeholder="Tìm đơn hàng, sản phẩm, khách hàng..." />
+        <div class="admin-topbar__right">
+          <a href="orders.html" class="action-btn" aria-label="Thông báo">🔔</a>
+          <div class="user-chip">
+            <span class="avatar">QA</span>
+            <span>Quản trị viên<small>admin@deskflow.example</small></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="page-head">
+          <div>
+            <h1>Thêm / sửa sản phẩm</h1>
+            <p class="breadcrumb"><a href="index.html">Dashboard</a> / <a href="products.html">Sản phẩm</a> / Bàn nâng hạ Nomad Pro</p>
+          </div>
+          <div class="actions">
+            <a href="products.html" class="btn btn--outline">Huỷ</a>
+            <button type="submit" form="product-form" class="btn">💾 Lưu sản phẩm</button>
+          </div>
+        </div>
+
+        <form id="product-form" class="grid-form" action="products.html" method="get">
+          <div class="stack">
+            <section class="card">
+              <div class="card__head"><h2>Thông tin cơ bản</h2></div>
+              <div class="field">
+                <label for="name">Tên sản phẩm *</label>
+                <input id="name" class="input" name="name" value="Bàn nâng hạ Nomad Pro" required minlength="3" />
+              </div>
+              <div class="grid-form" style="grid-template-columns:1fr 1fr">
+                <div class="field">
+                  <label for="sku">Mã SKU *</label>
+                  <input id="sku" class="input" name="sku" value="ND01" required pattern="[A-Z]{2}[0-9]{2}" title="2 chữ in hoa + 2 số, vd ND01" />
+                </div>
+                <div class="field">
+                  <label for="slug">Đường dẫn (slug)</label>
+                  <input id="slug" class="input" name="slug" value="ban-nang-ha-nomad-pro-nd01" />
+                </div>
+              </div>
+              <div class="field">
+                <label for="short">Mô tả ngắn</label>
+                <input id="short" class="input" name="short" value="Động cơ kép, nhớ 4 vị trí, tải trọng 120kg" />
+              </div>
+              <div class="field">
+                <label for="desc">Mô tả chi tiết</label>
+                <textarea id="desc" class="textarea" name="description" rows="6">Bàn nâng hạ Nomad Pro sử dụng hệ động cơ kép vận hành êm ái dưới 45dB, dải chiều cao 62–127cm, bảng điều khiển nhớ 4 vị trí.</textarea>
+              </div>
+            </section>
+
+            <section class="card">
+              <div class="card__head"><h2>Hình ảnh</h2></div>
+              <label class="upload">
+                <span style="font-size:28px">🖼️</span>
+                <strong>Kéo thả hoặc bấm để tải ảnh</strong>
+                <small>PNG, JPG, WEBP – tối đa 5MB</small>
+                <input type="file" accept="image/*" multiple class="visually-hidden" />
+              </label>
+              <div class="thumbs">
+                <img src="https://picsum.photos/seed/p1a/200/200" alt="" />
+                <img src="https://picsum.photos/seed/p1b/200/200" alt="" />
+                <img src="https://picsum.photos/seed/p1c/200/200" alt="" />
+                <img src="https://picsum.photos/seed/p1d/200/200" alt="" />
+              </div>
+            </section>
+
+            <section class="card card--flush">
+              <div class="card__head"><h2>Biến thể</h2><a href="#" class="btn btn--outline btn--sm">+ Thêm biến thể</a></div>
+              <div class="table-wrap" style="margin-top:16px">
+                <table class="table">
+                  <thead><tr><th>Biến thể</th><th class="num">Giá</th><th class="num">Tồn kho</th><th></th></tr></thead>
+                  <tbody>
+                    <tr><td>Mặt gỗ sồi · 120x60</td><td class="num">8.990.000₫</td><td class="num">10</td><td><a href="#" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a></td></tr>
+                    <tr><td>Mặt gỗ sồi · 140x70</td><td class="num">9.490.000₫</td><td class="num">8</td><td><a href="#" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a></td></tr>
+                    <tr><td>Mặt walnut · 140x70</td><td class="num">9.990.000₫</td><td class="num">6</td><td><a href="#" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <div class="stack">
+            <section class="card">
+              <div class="card__head"><h2>Trạng thái</h2></div>
+              <div class="info-list">
+                <ul>
+                  <li><span>Hiển thị trên web</span><label class="switch"><input type="checkbox" name="active" checked /><span></span></label></li>
+                  <li><span>Sản phẩm mới</span><label class="switch"><input type="checkbox" name="is_new" checked /><span></span></label></li>
+                  <li><span>Miễn phí lắp đặt</span><label class="switch"><input type="checkbox" name="free_install" checked /><span></span></label></li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="card">
+              <div class="card__head"><h2>Giá &amp; kho</h2></div>
+              <div class="field">
+                <label for="price">Giá bán (₫) *</label>
+                <input id="price" class="input" type="number" name="price" value="8990000" min="0" step="1000" required />
+              </div>
+              <div class="field">
+                <label for="compare">Giá gốc (₫)</label>
+                <input id="compare" class="input" type="number" name="compare_price" value="10990000" min="0" step="1000" />
+              </div>
+              <div class="field">
+                <label for="stock">Tồn kho</label>
+                <input id="stock" class="input" type="number" name="stock" value="24" min="0" />
+              </div>
+            </section>
+
+            <section class="card">
+              <div class="card__head"><h2>Phân loại</h2></div>
+              <div class="field">
+                <label for="category">Danh mục *</label>
+                <select id="category" class="select" name="category" required>
+                  <option>Bàn làm việc</option>
+                  <option>Ghế văn phòng</option>
+                  <option>Giải pháp màn hình</option>
+                  <option>Phụ kiện</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="tags">Tags</label>
+                <input id="tags" class="input" name="tags" value="nâng hạ, động cơ kép" />
+              </div>
+            </section>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+---
+title: Tìm kiếm – DeskFlow
+description: Tìm kiếm sản phẩm và bài viết tại DeskFlow.
+nav: none
+css: shop, checkout
+---
+    <section class="search-hero">
+      <div class="container">
+        <h1 class="section__title">Bạn đang tìm gì?</h1>
+        <form action="search.html" method="get" role="search">
+          <label for="q" class="visually-hidden">Từ khoá</label>
+          <input id="q" class="input" type="search" name="q" value="bàn nâng hạ" placeholder="Tên sản phẩm, mã SKU, bài viết..." required minlength="2" />
+          <button type="submit" class="btn">Tìm</button>
+        </form>
+        <div class="chips">
+          <span class="section__sub">Tìm nhiều:</span>
+          <a href="search.html" class="chip">bàn nâng hạ</a>
+          <a href="search.html" class="chip">ghế công thái học</a>
+          <a href="search.html" class="chip">arm màn hình</a>
+          <a href="search.html" class="chip">kê chân</a>
+          <a href="search.html" class="chip">đèn treo màn hình</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container listing">
+        <div class="sort-bar">
+          <p><strong>6 sản phẩm</strong> cho “bàn nâng hạ”</p>
+          <select class="select" name="sort" aria-label="Sắp xếp">
+            <option>Liên quan nhất</option>
+            <option>Giá tăng dần</option>
+            <option>Giá giảm dần</option>
+          </select>
+        </div>
+        <div class="product-grid">
+{{cards:0-4}}
+{{cards:8-10}}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Bài viết liên quan</h2>
+          <a href="blog.html" class="link-more">Xem tất cả</a>
+        </div>
+        <div class="blog-grid">
+{{posts:0-1}}
+{{posts:3-5}}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="no-result">
+          <div style="font-size:40px">🔍</div>
+          <h2 style="color:var(--color-text);margin:8px 0">Mẫu trạng thái: không tìm thấy kết quả</h2>
+          <p>Không có sản phẩm nào khớp với “xyz”. Hãy thử từ khoá khác hoặc xem các danh mục bên dưới.</p>
+          <div class="chips" style="justify-content:center;margin-top:16px">
+            <a href="collection.html" class="chip">Nội thất văn phòng</a>
+            <a href="collection.html" class="chip">Phụ kiện bàn làm việc</a>
+            <a href="collection.html" class="chip">Thiết bị công nghệ</a>
+          </div>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bàn làm việc & nội thất văn phòng – DeskFlow</title>
+  <meta name="description" content="Danh sách bàn nâng hạ, ghế công thái học, giá đỡ màn hình và phụ kiện bàn làm việc." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/web.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/shop.css" />
+</head>
+<body>
+
+  <!-- ===== TOPBAR ===== -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <ul class="topbar__links">
+        <li>🚚 Giao nhanh 2h nội thành HN &amp; HCM</li>
+      </ul>
+      <ul class="topbar__links topbar__links--right">
+        <li><a href="#">Tiếng Việt</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="contact.html">Hotline: 1900 0000</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Mở menu" />
+      <label for="menu-toggle" class="icon-btn menu-btn" aria-hidden="true">☰</label>
+
+      <a href="index.html" class="logo">Desk<span>Flow</span></a>
+
+      <ul class="nav">
+        <li class="has-mega">
+          <a href="collection.html" class="is-active">Sản phẩm ▾</a>
+          <div class="mega">
+            <div>
+              <h4>Nội thất văn phòng</h4>
+              <ul>
+                <li><a href="collection.html">Bàn làm việc</a></li>
+                <li><a href="collection.html">Ghế văn phòng</a></li>
+                <li><a href="collection.html">Lưu trữ</a></li>
+                <li><a href="collection.html">Giá treo TV</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Phụ kiện bàn làm việc</h4>
+              <ul>
+                <li><a href="collection.html">Giải pháp màn hình</a></li>
+                <li><a href="collection.html">Quản lý dây cáp</a></li>
+                <li><a href="collection.html">Kê chân, kê tay</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Thiết bị công nghệ</h4>
+              <ul>
+                <li><a href="collection.html">Bàn phím &amp; chuột</a></li>
+                <li><a href="collection.html">Đèn chiếu sáng</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Phong cách sống</h4>
+              <ul>
+                <li><a href="collection.html">Ví điện thoại</a></li>
+                <li><a href="collection.html">Cốc giữ nhiệt</a></li>
+              </ul>
+            </div>
+            <a href="b2b.html" class="mega__promo">
+              <img src="https://picsum.photos/seed/desksetup/600/375" alt="Thiết kế góc làm việc" loading="lazy" />
+              <p>Tự thiết kế góc làm việc của bạn →</p>
+            </a>
+          </div>
+        </li>
+        <li><a href="rewards.html">Tích điểm</a></li>
+        <li><a href="policy.html#bao-hanh">Bảo hành</a></li>
+        <li><a href="b2b.html">Hợp tác</a></li>
+        <li><a href="blog.html">Tin tức</a></li>
+      </ul>
+
+      <div class="header__actions">
+        <a href="search.html" class="icon-btn" aria-label="Tìm kiếm">🔍</a>
+        <a href="wishlist.html" class="icon-btn hide-sm" aria-label="Yêu thích">♡</a>
+        <a href="login.html" class="icon-btn" aria-label="Tài khoản">👤</a>
+        <a href="#cart" class="icon-btn" aria-label="Giỏ hàng">🛒<span class="cart-count">2</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Trang chủ</a> / <a href="collection.html">Sản phẩm</a> / <span aria-current="page">Nội thất văn phòng</span></nav>
+
+      <section class="collection-banner">
+        <div class="collection-banner__body">
+          <span class="product__cat">48 sản phẩm</span>
+          <h1>Nội thất văn phòng</h1>
+          <p>Bàn nâng hạ, ghế công thái học và giải pháp lưu trữ giúp bạn làm việc khoẻ hơn mỗi ngày.</p>
+        </div>
+        <img src="https://picsum.photos/seed/collectionbanner/900/520" alt="" />
+      </section>
+    </div>
+
+    <section class="section">
+      <div class="container collection">
+
+        <!-- ===== FILTERS (sidebar, mobile overlay via :target) ===== -->
+        <aside class="filters" id="filters" aria-label="Bộ lọc">
+          <div class="filters__head">
+            <h2>Bộ lọc</h2>
+            <a href="#" class="icon-btn filters__close" aria-label="Đóng bộ lọc">✕</a>
+          </div>
+          <form action="collection.html" method="get">
+            <details open>
+              <summary>Danh mục</summary>
+              <div class="check-list">
+                <label><input type="checkbox" name="cat" value="desk" checked /> Bàn nâng hạ <small>12</small></label>
+                <label><input type="checkbox" name="cat" value="chair" /> Ghế công thái học <small>9</small></label>
+                <label><input type="checkbox" name="cat" value="storage" /> Lưu trữ <small>6</small></label>
+                <label><input type="checkbox" name="cat" value="monitor" /> Giải pháp màn hình <small>11</small></label>
+                <label><input type="checkbox" name="cat" value="accessory" /> Phụ kiện <small>10</small></label>
+              </div>
+            </details>
+            <details open>
+              <summary>Khoảng giá</summary>
+              <div class="check-list">
+                <label><input type="radio" name="price" value="0-1" /> Dưới 1 triệu</label>
+                <label><input type="radio" name="price" value="1-5" /> 1 – 5 triệu</label>
+                <label><input type="radio" name="price" value="5-10" checked /> 5 – 10 triệu</label>
+                <label><input type="radio" name="price" value="10" /> Trên 10 triệu</label>
+              </div>
+              <div class="price-range">
+                <input class="input" type="number" name="min" min="0" step="100000" placeholder="Từ" aria-label="Giá từ" />
+                <span>–</span>
+                <input class="input" type="number" name="max" min="0" step="100000" placeholder="Đến" aria-label="Giá đến" />
+              </div>
+            </details>
+            <details open>
+              <summary>Màu sắc</summary>
+              <div class="swatches">
+                <label class="swatch" title="Trắng"><input type="checkbox" name="color" value="white" /><span style="background:#f4f4f2"></span></label>
+                <label class="swatch" title="Đen"><input type="checkbox" name="color" value="black" checked /><span style="background:#1b1b1b"></span></label>
+                <label class="swatch" title="Gỗ sồi"><input type="checkbox" name="color" value="oak" /><span style="background:#c8a27a"></span></label>
+                <label class="swatch" title="Walnut"><input type="checkbox" name="color" value="walnut" /><span style="background:#6b4a32"></span></label>
+                <label class="swatch" title="Xám"><input type="checkbox" name="color" value="grey" /><span style="background:#9aa0a6"></span></label>
+              </div>
+            </details>
+            <details>
+              <summary>Kích thước mặt bàn</summary>
+              <div class="check-list">
+                <label><input type="checkbox" name="size" value="120x60" /> 120 × 60 cm</label>
+                <label><input type="checkbox" name="size" value="140x70" /> 140 × 70 cm</label>
+                <label><input type="checkbox" name="size" value="160x80" /> 160 × 80 cm</label>
+              </div>
+            </details>
+            <details>
+              <summary>Tình trạng</summary>
+              <div class="check-list">
+                <label><input type="checkbox" name="stock" value="in" /> Còn hàng</label>
+                <label><input type="checkbox" name="sale" value="1" /> Đang giảm giá</label>
+                <label><input type="checkbox" name="install" value="1" /> Miễn phí lắp đặt</label>
+              </div>
+            </details>
+            <div class="price-range" style="padding-top:16px">
+              <button type="reset" class="btn btn--outline btn--sm">Xoá lọc</button>
+              <button type="submit" class="btn btn--sm">Áp dụng</button>
+            </div>
+          </form>
+        </aside>
+
+        <!-- ===== LISTING ===== -->
+        <div class="listing">
+          <div class="sort-bar">
+            <div class="chips">
+              <a href="#filters" class="btn btn--outline btn--sm filters-open">⚙ Bộ lọc</a>
+              <a href="collection.html" class="chip">Bàn nâng hạ ✕</a>
+              <a href="collection.html" class="chip">5 – 10 triệu ✕</a>
+              <a href="collection.html" class="chip">Đen ✕</a>
+            </div>
+            <div class="sort-bar__right">
+              <select class="select" name="sort" aria-label="Sắp xếp">
+                <option>Nổi bật</option>
+                <option>Mới nhất</option>
+                <option>Bán chạy</option>
+                <option>Giá tăng dần</option>
+                <option>Giá giảm dần</option>
+              </select>
+              <div class="view-toggle">
+                <input type="radio" name="view" id="view-grid" checked />
+                <label for="view-grid" title="Dạng lưới">▦</label>
+                <input type="radio" name="view" id="view-list" />
+                <label for="view-list" title="Dạng danh sách">☰</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-grid">
+          <article class="product">
+            <a href="product.html" class="product__media">
+              <div class="product__badges"><span class="badge badge--new">Sản phẩm mới</span><span class="badge badge--free">Miễn phí lắp đặt</span></div>
+              <img src="https://picsum.photos/seed/p1a/600/600" alt="Bàn nâng hạ Nomad Pro" loading="lazy" />
+              <img src="https://picsum.photos/seed/p1b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Bàn nâng hạ</span>
+            <h3 class="product__name"><a href="product.html">Bàn nâng hạ Nomad Pro – ND01</a></h3>
+            <div class="price">
+              <span class="price__sale">Từ 8.990.000₫</span>
+              <span class="price__regular">10.990.000₫</span>
+            </div>
+            <a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>
+          </article>
+          <article class="product">
+            <a href="product.html" class="product__media">
+              <div class="product__badges"><span class="badge badge--free">Miễn phí lắp đặt</span></div>
+              <img src="https://picsum.photos/seed/p2a/600/600" alt="Bàn nâng hạ Nomad Core" loading="lazy" />
+              <img src="https://picsum.photos/seed/p2b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Bàn nâng hạ</span>
+            <h3 class="product__name"><a href="product.html">Bàn nâng hạ Nomad Core – ND02</a></h3>
+            <div class="price">
+              <span class="price__sale">Từ 6.490.000₫</span>
+              <span class="price__regular">7.490.000₫</span>
+            </div>
+            <a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>
+          </article>
+          <article class="product">
+            <a href="product.html" class="product__media">
+              <div class="product__badges"><span class="badge badge--new">Sản phẩm mới</span></div>
+              <img src="https://picsum.photos/seed/p3a/600/600" alt="Ghế công thái học Breeze" loading="lazy" />
+              <img src="https://picsum.photos/seed/p3b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Ghế công thái học</span>
+            <h3 class="product__name"><a href="product.html">Ghế công thái học Breeze – CH05</a></h3>
+            <div class="price">
+              <span class="price__sale">5.290.000₫</span>
+              <span class="price__regular">6.190.000₫</span>
+            </div>
+            <a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>
+          </article>
+          <article class="product">
+            <a href="product.html" class="product__media">
+              <img src="https://picsum.photos/seed/p4a/600/600" alt="Kê màn hình 2 tầng Cloud" loading="lazy" />
+              <img src="https://picsum.photos/seed/p4b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Giải pháp màn hình</span>
+            <h3 class="product__name"><a href="product.html">Kê màn hình 2 tầng Cloud – MR02</a></h3>
+            <div class="price">
+              <span class="price__sale">890.000₫</span>
+              <span class="price__regular">1.090.000₫</span>
+            </div>
+            <a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>
+          </article>
+          <article class="product product--soldout">
+            <a href="product.html" class="product__media">
+              <div class="product__badges"><span class="badge badge--soldout">Tạm hết</span></div>
+              <img src="https://picsum.photos/seed/p5a/600/600" alt="Arm màn hình đơn Glide" loading="lazy" />
+              <img src="https://picsum.photos/seed/p5b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Giải pháp màn hình</span>
+            <h3 class="product__name"><a href="product.html">Arm màn hình đơn Glide – MA01</a></h3>
+            <div class="price">
+              <span class="price__sale">1.290.000₫</span>
+              
+            </div>
+            <span class="btn btn--outline btn--sm btn--block" aria-disabled="true">Tạm hết hàng</span>
+          </article>
+          <article class="product">
+            <a href="product.html" class="product__media">
+              <img src="https://picsum.photos/seed/p6a/600/600" alt="Cốc giữ nhiệt Warmly 500ml" loading="lazy" />
+              <img src="https://picsum.photos/seed/p6b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Cốc giữ nhiệt</span>
+            <h3 class="product__name"><a href="product.html">Cốc giữ nhiệt Warmly 500ml – TC01</a></h3>
+            <div class="price">
+              <span class="price__sale">390.000₫</span>
+              <span class="price__regular">450.000₫</span>
+            </div>
+            <a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>
+          </article>
+          <article class="product">
+            <a href="product.html" class="product__media">
+              <div class="product__badges"><span class="badge badge--new">Sản phẩm mới</span></div>
+              <img src="https://picsum.photos/seed/p7a/600/600" alt="Đèn treo màn hình Halo" loading="lazy" />
+              <img src="https://picsum.photos/seed/p7b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Đèn chiếu sáng</span>
+            <h3 class="product__name"><a href="product.html">Đèn treo màn hình Halo – LT02</a></h3>
+            <div class="price">
+              <span class="price__sale">690.000₫</span>
+              
+            </div>
+            <a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>
+          </article>
+          <article class="product">
+            <a href="product.html" class="product__media">
+              <img src="https://picsum.photos/seed/p8a/600/600" alt="Khay quản lý dây cáp Tidy" loading="lazy" />
+              <img src="https://picsum.photos/seed/p8b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Phụ kiện</span>
+            <h3 class="product__name"><a href="product.html">Khay quản lý dây cáp Tidy – AC03</a></h3>
+            <div class="price">
+              <span class="price__sale">250.000₫</span>
+              <span class="price__regular">320.000₫</span>
+            </div>
+            <a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>
+          </article>
+          <article class="product">
+            <a href="product.html" class="product__media">
+              <div class="product__badges"><span class="badge badge--free">Miễn phí lắp đặt</span></div>
+              <img src="https://picsum.photos/seed/p9a/600/600" alt="Ghế công thái học Flow Lite" loading="lazy" />
+              <img src="https://picsum.photos/seed/p9b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Ghế công thái học</span>
+            <h3 class="product__name"><a href="product.html">Ghế công thái học Flow Lite – CH03</a></h3>
+            <div class="price">
+              <span class="price__sale">3.490.000₫</span>
+              <span class="price__regular">3.990.000₫</span>
+            </div>
+            <a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>
+          </article>
+          <article class="product">
+            <a href="product.html" class="product__media">
+              <img src="https://picsum.photos/seed/p10a/600/600" alt="Tủ hồ sơ di động Cube" loading="lazy" />
+              <img src="https://picsum.photos/seed/p10b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Lưu trữ</span>
+            <h3 class="product__name"><a href="product.html">Tủ hồ sơ di động Cube – ST01</a></h3>
+            <div class="price">
+              <span class="price__sale">Từ 1.890.000₫</span>
+              
+            </div>
+            <a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>
+          </article>
+          <article class="product">
+            <a href="product.html" class="product__media">
+              <div class="product__badges"><span class="badge badge--new">Sản phẩm mới</span></div>
+              <img src="https://picsum.photos/seed/p11a/600/600" alt="Arm màn hình đôi Glide Duo" loading="lazy" />
+              <img src="https://picsum.photos/seed/p11b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Giải pháp màn hình</span>
+            <h3 class="product__name"><a href="product.html">Arm màn hình đôi Glide Duo – MA02</a></h3>
+            <div class="price">
+              <span class="price__sale">2.190.000₫</span>
+              <span class="price__regular">2.590.000₫</span>
+            </div>
+            <a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>
+          </article>
+          <article class="product">
+            <a href="product.html" class="product__media">
+              <img src="https://picsum.photos/seed/p12a/600/600" alt="Bàn phím cơ Silent 75" loading="lazy" />
+              <img src="https://picsum.photos/seed/p12b/600/600" alt="" loading="lazy" />
+            </a>
+            <span class="product__cat">Bàn phím & chuột</span>
+            <h3 class="product__name"><a href="product.html">Bàn phím cơ Silent 75 – KB01</a></h3>
+            <div class="price">
+              <span class="price__sale">1.590.000₫</span>
+              <span class="price__regular">1.890.000₫</span>
+            </div>
+            <a href="#cart" class="btn btn--outline btn--sm btn--block">+ Thêm</a>
+          </article>
+          </div>
+
+          <nav class="pager" aria-label="Phân trang">
+            <a href="collection.html" aria-label="Trang trước">‹</a>
+            <a href="collection.html" class="is-active">1</a>
+            <a href="collection.html">2</a>
+            <a href="collection.html">3</a>
+            <a href="collection.html">4</a>
+            <a href="collection.html" aria-label="Trang sau">›</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__info">
+          <a href="index.html" class="logo">Desk<span>Flow</span></a>
+          <p>Công ty TNHH DeskFlow Việt Nam (dữ liệu mẫu)</p>
+          <p>📍 123 Đường Mẫu, Phường Sài Gòn, TP.HCM</p>
+          <p>📞 1900 0000 · ✉️ hello@deskflow.example</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="YouTube">▶</a>
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="TikTok">♪</a>
+          </div>
+        </div>
+        <div>
+          <h4>Hợp tác</h4>
+          <ul>
+            <li><a href="b2b.html">Giải pháp doanh nghiệp</a></li>
+            <li><a href="b2b.html#bao-gia">Nhận báo giá</a></li>
+            <li><a href="contact.html">Hợp tác Media</a></li>
+            <li><a href="contact.html">Đại lý</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Hỗ trợ</h4>
+          <ul>
+            <li><a href="contact.html">Liên hệ</a></li>
+            <li><a href="policy.html#bao-hanh">Chính sách bảo hành</a></li>
+            <li><a href="policy.html#giao-hang">Chính sách giao hàng</a></li>
+            <li><a href="policy.html#doi-tra">Chính sách đổi trả</a></li>
+            <li><a href="policy.html#bao-mat">Chính sách bảo mật</a></li>
+            <li><a href="policy.html#dieu-khoan">Điều khoản sử dụng</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Tài khoản</h4>
+          <ul>
+            <li><a href="login.html">Đăng nhập / Đăng ký</a></li>
+            <li><a href="account.html">Tài khoản của tôi</a></li>
+            <li><a href="account-order.html">Tra cứu đơn hàng</a></li>
+            <li><a href="wishlist.html">Sản phẩm yêu thích</a></li>
+            <li><a href="rewards.html">Tích điểm thành viên</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Khám phá</h4>
+          <ul>
+            <li><a href="about.html">Về chúng tôi</a></li>
+            <li><a href="blog.html">Tin tức</a></li>
+            <li><a href="collection.html">Tất cả sản phẩm</a></li>
+            <li><a href="admin/login.html">Trang quản trị</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 DeskFlow. Template demo cho mục đích học tập.</span>
+        <span>Visa · Mastercard · QR Banking · COD</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING CHAT ===== -->
+  <details class="chat">
+    <summary aria-label="Liên hệ nhanh">💬</summary>
+    <ul>
+      <li><a href="contact.html">💻 Chat trên web</a></li>
+      <li><a href="#">🟦 Zalo</a></li>
+      <li><a href="#">💙 Messenger</a></li>
+    </ul>
+  </details>
+
+  <!-- ===== CART DRAWER (:target) ===== -->
+  <div class="overlay" id="cart" role="dialog" aria-label="Giỏ hàng">
+    <a href="#" class="overlay__close-area" aria-label="Đóng"></a>
+    <aside class="drawer">
+      <div class="drawer__head">
+        <h3>Giỏ hàng (2)</h3>
+        <a href="#" class="icon-btn" aria-label="Đóng giỏ hàng">✕</a>
+      </div>
+      <div class="drawer__body">
+        <div class="cart-item">
+          <img src="https://picsum.photos/seed/p1a/200/200" alt="" />
+          <div>
+            <h4>Bàn nâng hạ Nomad Pro – ND01</h4>
+            <small>Mặt gỗ sồi · 140x70cm</small>
+            <div class="qty"><button type="button">−</button><span>1</span><button type="button">+</button></div>
+          </div>
+          <div>
+            <strong>8.990.000₫</strong><br />
+            <button type="button" class="remove">Xoá</button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="https://picsum.photos/seed/p4a/200/200" alt="" />
+          <div>
+            <h4>Kê màn hình 2 tầng Cloud – MR02</h4>
+            <small>Màu trắng</small>
+            <div class="qty"><button type="button">−</button><span>2</span><button type="button">+</button></div>
+          </div>
+          <div>
+            <strong>1.780.000₫</strong><br />
+            <button type="button" class="remove">Xoá</button>
+          </div>
+        </div>
+      </div>
+      <div class="drawer__foot">
+        <div class="summary-row"><span>Tạm tính</span><span>10.770.000₫</span></div>
+        <div class="summary-row"><span>Phí vận chuyển</span><span>Miễn phí</span></div>
+        <div class="summary-row summary-row--total"><span>Tổng cộng</span><span>10.770.000₫</span></div>
+        <a href="checkout.html" class="btn btn--accent btn--block">Thanh toán</a>
+        <p class="drawer__links"><a href="cart.html" class="link-more">Xem giỏ hàng</a> · <a href="#" class="link-more">Tiếp tục mua sắm</a></p>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>

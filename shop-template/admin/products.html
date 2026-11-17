@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sản phẩm – DeskFlow Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body>
+  <div class="admin">
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" aria-label="Mở menu" />
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <a href="index.html" class="logo">Desk<span>Flow</span><small>Admin Panel</small></a>
+      <p class="sidebar__group">Tổng quan</p>
+      <a href="index.html" class="sidebar__link"><span>📊</span> Dashboard</a>
+      <p class="sidebar__group">Bán hàng</p>
+      <a href="orders.html" class="sidebar__link"><span>🧾</span> Đơn hàng<span class="count">12</span></a>
+      <a href="customers.html" class="sidebar__link"><span>👥</span> Khách hàng</a>
+      <p class="sidebar__group">Danh mục</p>
+      <a href="products.html" class="sidebar__link is-active"><span>📦</span> Sản phẩm</a>
+      <a href="categories.html" class="sidebar__link"><span>🗂️</span> Danh mục</a>
+      <div class="sidebar__foot">
+        <a href="../index.html" class="sidebar__link"><span>🌐</span> Xem website</a>
+        <a href="login.html" class="sidebar__link"><span>🚪</span> Đăng xuất</a>
+      </div>
+    </aside>
+
+    <div class="main">
+      <!-- ===== TOPBAR ===== -->
+      <header class="admin-topbar">
+        <label for="sidebar-toggle" class="action-btn sidebar-btn" aria-label="Menu">☰</label>
+        <input class="input search" type="search" placeholder="Tìm đơn hàng, sản phẩm, khách hàng..." />
+        <div class="admin-topbar__right">
+          <a href="orders.html" class="action-btn" aria-label="Thông báo">🔔</a>
+          <div class="user-chip">
+            <span class="avatar">QA</span>
+            <span>Quản trị viên<small>admin@deskflow.example</small></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="page-head">
+          <div>
+            <h1>Sản phẩm</h1>
+            <p class="breadcrumb"><a href="index.html">Dashboard</a> / Sản phẩm</p>
+          </div>
+          <div class="actions">
+            <a href="#" class="btn btn--outline">⬇ Xuất Excel</a>
+            <a href="product-form.html" class="btn">+ Thêm sản phẩm</a>
+          </div>
+        </div>
+
+        <section class="card card--flush">
+          <nav class="tabs">
+            <a href="#" class="is-active">Tất cả (48)</a>
+            <a href="#">Đang bán (42)</a>
+            <a href="#">Ẩn (3)</a>
+            <a href="#">Hết hàng (3)</a>
+          </nav>
+          <form class="toolbar" action="#" method="get">
+            <input class="input" type="search" name="q" placeholder="Tìm theo tên, SKU..." />
+            <select class="select" name="category" aria-label="Danh mục">
+              <option value="">Tất cả danh mục</option>
+              <option>Bàn làm việc</option>
+              <option>Ghế văn phòng</option>
+              <option>Giải pháp màn hình</option>
+              <option>Phụ kiện</option>
+            </select>
+            <select class="select" name="sort" aria-label="Sắp xếp">
+              <option>Mới nhất</option>
+              <option>Giá tăng dần</option>
+              <option>Giá giảm dần</option>
+              <option>Tồn kho ít nhất</option>
+            </select>
+            <button type="submit" class="btn btn--outline">Lọc</button>
+          </form>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr><th><input type="checkbox" aria-label="Chọn tất cả" /></th><th>Sản phẩm</th><th>Danh mục</th><th class="num">Giá bán</th><th class="num">Tồn kho</th><th>Trạng thái</th><th>Thao tác</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" aria-label="Chọn Bàn nâng hạ Nomad Pro" /></td>
+                  <td><div class="cell-product"><img src="https://picsum.photos/seed/p1a/100/100" alt="" /><div><strong>Bàn nâng hạ Nomad Pro</strong><small>SKU: ND01</small></div></div></td>
+                  <td>Bàn làm việc</td>
+                  <td class="num">8.990.000₫</td>
+                  <td class="num">24</td>
+                  <td><span class="status status--on">Đang bán</span></td>
+                  <td>
+                    <div class="actions">
+                      <a href="product-form.html" class="action-btn" aria-label="Sửa">✏️</a>
+                      <a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Chọn Bàn nâng hạ Nomad Core" /></td>
+                  <td><div class="cell-product"><img src="https://picsum.photos/seed/p2a/100/100" alt="" /><div><strong>Bàn nâng hạ Nomad Core</strong><small>SKU: ND02</small></div></div></td>
+                  <td>Bàn làm việc</td>
+                  <td class="num">6.490.000₫</td>
+                  <td class="num">31</td>
+                  <td><span class="status status--on">Đang bán</span></td>
+                  <td>
+                    <div class="actions">
+                      <a href="product-form.html" class="action-btn" aria-label="Sửa">✏️</a>
+                      <a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Chọn Ghế công thái học Breeze" /></td>
+                  <td><div class="cell-product"><img src="https://picsum.photos/seed/p3a/100/100" alt="" /><div><strong>Ghế công thái học Breeze</strong><small>SKU: CH05</small></div></div></td>
+                  <td>Ghế văn phòng</td>
+                  <td class="num">5.290.000₫</td>
+                  <td class="num">12</td>
+                  <td><span class="status status--on">Đang bán</span></td>
+                  <td>
+                    <div class="actions">
+                      <a href="product-form.html" class="action-btn" aria-label="Sửa">✏️</a>
+                      <a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Chọn Kê màn hình 2 tầng Cloud" /></td>
+                  <td><div class="cell-product"><img src="https://picsum.photos/seed/p4a/100/100" alt="" /><div><strong>Kê màn hình 2 tầng Cloud</strong><small>SKU: MR02</small></div></div></td>
+                  <td>Giải pháp màn hình</td>
+                  <td class="num">890.000₫</td>
+                  <td class="num">58</td>
+                  <td><span class="status status--on">Đang bán</span></td>
+                  <td>
+                    <div class="actions">
+                      <a href="product-form.html" class="action-btn" aria-label="Sửa">✏️</a>
+                      <a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Chọn Arm màn hình đơn Glide" /></td>
+                  <td><div class="cell-product"><img src="https://picsum.photos/seed/p5a/100/100" alt="" /><div><strong>Arm màn hình đơn Glide</strong><small>SKU: MA01</small></div></div></td>
+                  <td>Giải pháp màn hình</td>
+                  <td class="num">1.290.000₫</td>
+                  <td class="num"><span class="badge badge--danger">Hết hàng</span></td>
+                  <td><span class="status status--off">Ẩn</span></td>
+                  <td>
+                    <div class="actions">
+                      <a href="product-form.html" class="action-btn" aria-label="Sửa">✏️</a>
+                      <a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Chọn Cốc giữ nhiệt Warmly 500ml" /></td>
+                  <td><div class="cell-product"><img src="https://picsum.photos/seed/p6a/100/100" alt="" /><div><strong>Cốc giữ nhiệt Warmly 500ml</strong><small>SKU: TC01</small></div></div></td>
+                  <td>Cốc giữ nhiệt</td>
+                  <td class="num">390.000₫</td>
+                  <td class="num">120</td>
+                  <td><span class="status status--on">Đang bán</span></td>
+                  <td>
+                    <div class="actions">
+                      <a href="product-form.html" class="action-btn" aria-label="Sửa">✏️</a>
+                      <a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Chọn Đèn treo màn hình Halo" /></td>
+                  <td><div class="cell-product"><img src="https://picsum.photos/seed/p7a/100/100" alt="" /><div><strong>Đèn treo màn hình Halo</strong><small>SKU: LT02</small></div></div></td>
+                  <td>Đèn chiếu sáng</td>
+                  <td class="num">690.000₫</td>
+                  <td class="num">45</td>
+                  <td><span class="status status--on">Đang bán</span></td>
+                  <td>
+                    <div class="actions">
+                      <a href="product-form.html" class="action-btn" aria-label="Sửa">✏️</a>
+                      <a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" aria-label="Chọn Khay quản lý dây cáp Tidy" /></td>
+                  <td><div class="cell-product"><img src="https://picsum.photos/seed/p8a/100/100" alt="" /><div><strong>Khay quản lý dây cáp Tidy</strong><small>SKU: AC03</small></div></div></td>
+                  <td>Phụ kiện</td>
+                  <td class="num">250.000₫</td>
+                  <td class="num"><span class="badge badge--warning">7</span></td>
+                  <td><span class="status status--off">Ẩn</span></td>
+                  <td>
+                    <div class="actions">
+                      <a href="product-form.html" class="action-btn" aria-label="Sửa">✏️</a>
+                      <a href="#confirm-delete" class="action-btn action-btn--danger" aria-label="Xoá">🗑️</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination">
+            <span>Hiển thị 1–8 trong 48 sản phẩm</span>
+            <ul>
+              <li><a href="#">‹</a></li>
+              <li><a href="#" class="is-active">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">…</a></li>
+              <li><a href="#">6</a></li>
+              <li><a href="#">›</a></li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- ===== CONFIRM DELETE (:target) ===== -->
+  <div class="overlay" id="confirm-delete" role="dialog" aria-label="Xác nhận xoá">
+    <a href="#" class="overlay__close-area" aria-label="Đóng"></a>
+    <div class="admin-modal">
+      <h3>Xoá sản phẩm?</h3>
+      <p>Hành động này không thể hoàn tác. Bạn có chắc chắn muốn xoá?</p>
+      <div class="admin-modal__actions">
+        <a href="#" class="btn btn--outline">Huỷ</a>
+        <a href="#" class="btn btn--danger">Xoá</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
