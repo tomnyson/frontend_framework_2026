@@ -1,3 +1,7 @@
+<script setup>
+  import ProductListAPI from '../components/ProductListAPI.vue';
+</script>
+
 <template>
-  <h1>day la trang chu</h1>
+  <ProductListAPI />
 </template>

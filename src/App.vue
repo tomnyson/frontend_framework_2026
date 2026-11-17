@@ -35,7 +35,11 @@ const chageEmail = (event) => {
 
 <template>
   <div class="container">
-  <ProductListAPI />
+    <router-link to="/">Home</router-link> <br />
+    <router-link to="/collection">Collection</router-link> <br />
+
+    <router-view></router-view>
+  <!-- <ProductListAPI /> -->
    <!-- <div class="toan-ly-hoa">
 <div class="toan">
         <label for="toan">toan:</label>

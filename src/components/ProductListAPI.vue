@@ -157,7 +157,9 @@ const editProduct = async (productToEdit) => {
       <div class="card h-100">
         <img :src="product.hinh_anh" class="card-img-top" alt="Hình ảnh sản phẩm">
         <div class="card-body">
-          <h5 class="card-title">{{ product.ten }}</h5>
+         <router-link :to="`/product/${product.id}`">
+            <h5 class="card-title">{{ product.ten }}</h5>
+          </router-link>
           <p class="card-text">{{ product.mo_ta }}</p>
           <p class="card-text"><strong>Giá:</strong> {{ product.gia.toLocaleString('vi-VN', {
             style: 'currency',
