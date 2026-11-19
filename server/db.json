@@ -1,4 +1,14 @@
 {
+  "users": [
+    {
+      "id": "f291af5b-74d5-46aa-9ab2-5ee85ec3579a",
+      "email": "tabletkindfire@gmail.com",
+      "name": "123456",
+      "passwordHash": "$2b$10$xud.Y2oOzeIfV4a1ua.xO.oA3jAp/POf49zZjE1eMMhrv9dAgswgG",
+      "role": "user",
+      "createdAt": "2026-11-19T08:45:40.099Z"
+    }
+  ],
   "products": [
     {
       "id": "SP001",
